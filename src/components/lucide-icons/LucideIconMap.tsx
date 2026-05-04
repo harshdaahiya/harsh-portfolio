@@ -12,6 +12,7 @@ export const IconMap = {
   linkedin: Icons.Linkedin,
   x: Icons.Twitter,
   github: Icons.Github,
+  instagram: Icons.Instagram,
 
   // UI Icons
   'chevron-down': Icons.ChevronDown,

@@ -7,6 +7,7 @@ import {
   ExternalLink,
   Github,
   Home,
+  Instagram,
   Linkedin,
   Mail,
   Menu,
@@ -42,4 +43,5 @@ export const Icons = {
   Linkedin,
   Twitter,
   Github,
+  Instagram,
 };
