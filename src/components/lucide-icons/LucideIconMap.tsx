@@ -25,6 +25,10 @@ export const IconMap = {
   settings: Icons.Settings,
   plus: Icons.Plus,
   check: Icons.Check,
+  blog: Icons.Book,
+  Train: Icons.Train,
+  Youtube: Icons.Youtube,
+  PrinterCheck: Icons.PrinterCheck,
 
   // Feature Icons
   home: Icons.Home,

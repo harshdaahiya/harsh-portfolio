@@ -40,12 +40,13 @@ export const footer: Footer = {
       name: 'Home',
       href: '#',
       icon: <LucideIcon name="home" size={20} />,
-      heading: 'Navigate',
+      heading: 'NAVIGATE',
     },
+
     {
-      name: 'Experience',
-      href: '#experience',
-      icon: <LucideIcon name="star" size={20} />,
+      name: 'Blog',
+      href: '/blog',
+      icon: <LucideIcon name={'blog'} size={20} />,
     },
     {
       name: 'Projects',
@@ -57,13 +58,24 @@ export const footer: Footer = {
       href: '/contact',
       icon: <LucideIcon name="mail" size={20} />,
     },
+
+    {
+      name: 'Journey',
+      href: '/journey',
+      icon: <LucideIcon name={'Train'} size={20} />,
+    },
+    {
+      name: 'Experience',
+      href: '#experience',
+      icon: <LucideIcon name="star" size={20} />,
+    },
   ],
   socialIcons: [
     {
       name: 'Github',
       icon: <LucideIcon name={'github'} size={20} />,
       href: '',
-      heading: 'Social Links',
+      heading: 'CONNECT',
     },
     {
       name: 'Linkedin',
@@ -78,6 +90,16 @@ export const footer: Footer = {
     {
       name: 'Instagram',
       icon: <LucideIcon name={'instagram'} size={20} />,
+      href: '',
+    },
+    {
+      name: 'YouTube',
+      icon: <LucideIcon name={'Youtube'} size={20} />,
+      href: '',
+    },
+    {
+      name: 'Print',
+      icon: <LucideIcon name={'PrinterCheck'} size={20} />,
       href: '',
     },
   ],
