@@ -10,8 +10,8 @@ type ExperienceListProps = {
 export default function ExperienceList({ experiences }: ExperienceListProps) {
   return (
     <div className="flex flex-col gap-4">
-      {experiences.map((exp) => (
-        <ExperienceCard key={exp.company} experience={exp} />
+      {experiences.map((exp, index) => (
+        <ExperienceCard key={exp.company} experience={exp} index={index} />
       ))}
     </div>
   );
