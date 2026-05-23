@@ -74,28 +74,28 @@ export const footer: Footer = {
     {
       name: 'Github',
       icon: <LucideIcon name={'github'} size={20} />,
-      href: '',
+      href: 'https://github.com/harshdaahiya',
       heading: 'CONNECT',
     },
     {
       name: 'Linkedin',
       icon: <LucideIcon name={'linkedin'} size={20} />,
-      href: '',
+      href: 'https://linkedin.com/in/harshdaahiya/',
     },
     {
       name: 'X',
       icon: <LucideIcon name={'x'} size={20} />,
-      href: '',
+      href: 'https://x.com/harshdaahiya',
     },
     {
       name: 'Instagram',
       icon: <LucideIcon name={'instagram'} size={20} />,
-      href: '',
+      href: 'https://instagram.com/harshdaahiya',
     },
     {
       name: 'YouTube',
       icon: <LucideIcon name={'Youtube'} size={20} />,
-      href: '',
+      href: 'https://www.youtube.com/@harshdaahiya',
     },
     {
       name: 'Print',

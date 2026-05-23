@@ -9,22 +9,22 @@ export const landingHeroConfig = {
 export const socialLinks = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/believeharsh11',
+    href: 'https://linkedin.com/in/harshdaahiya',
     icon: 'linkedin',
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/believeharsh',
+    href: 'https://github.com/harshdaahiya',
     icon: 'github',
   },
   {
     label: 'Email',
-    href: 'mailto:onlybelieveharsh@gmail.com',
+    href: 'mailto:harshdaahiya@gmail.com',
     icon: 'mail',
   },
   {
     label: 'X',
-    href: 'https://x.com/believeharsh',
+    href: 'https://x.com/harshdaahiya',
     icon: 'x',
   },
 ];

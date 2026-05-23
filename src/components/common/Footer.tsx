@@ -51,7 +51,7 @@ export default function Footer() {
                   {FooterConfig.navigate.map((item, index) => (
                     <Link
                       href={item.href}
-                      key={index}
+                      key={item.name + index}
                       className="text-muted-foreground hover:text-foreground transition-colors text-md w-fit"
                     >
                       {item.name}
@@ -71,8 +71,10 @@ export default function Footer() {
                 <div className="grid grid-cols-3 gap-x-14 gap-y-4 lg:w-3/12 pt-4">
                   {FooterConfig.socialIcons.map((item, index) => (
                     <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={item.href}
-                      key={index}
+                      key={item.name + index}
                       className="w-10 h-10 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                     >
                       {item.icon}

@@ -21,7 +21,12 @@ export default function Hero() {
             {socialLinks.map((link) => (
               <Tooltip key={link.label} delayDuration={0}>
                 <TooltipTrigger asChild>
-                  <Link key={link.label} href={link.href}>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={link.label}
+                    href={link.href}
+                  >
                     <LucideIcon
                       name={link.icon as IconName}
                       size={26}
