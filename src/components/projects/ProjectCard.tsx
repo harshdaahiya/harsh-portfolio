@@ -12,15 +12,17 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 interface ProjectCardProps {
   project?: project;
   isViewAll?: boolean;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
 export default function ProjectCard({
   project,
   isViewAll = false,
+  onClick,
 }: ProjectCardProps) {
   if (isViewAll) {
     return (
-      <Link href="/projects" className="block h-full w-full">
+      <Link href="/projects" onClick={onClick} className="block h-full w-full">
         <motion.div
           whileHover={{ y: -6, scale: 1.01 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -50,83 +52,91 @@ export default function ProjectCard({
   const hasImage = !!project.projectImage;
 
   return (
-    <motion.div
-      whileHover={{ y: -6 }}
-      transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-      className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md hover:border-muted-foreground"
+    <Link
+      href={`/projects/${project.slug}`}
+      onClick={onClick}
+      className="block h-full w-full"
     >
-      {/* Top Image Container */}
-      <div className="relative aspect-16/10 w-full overflow-hidden border-b border-border bg-muted p-2">
-        {hasImage ? (
-          <Image
-            src={project.projectImage}
-            alt={project.projectName}
-            fill
-            sizes="(max-width: 768px) 100vw, 480px"
-            className="transition-transform duration-700 ease-out group-hover:scale-103"
-            priority
-          />
-        ) : (
-          /* Premium Fallback CSS Gradient */
-          <div className="absolute inset-0 bg-linear-to-br from-violet-600/90 via-indigo-600/90 to-blue-600/90 flex flex-col items-center justify-center text-white p-6">
-            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px]" />
-            <span className="text-3xl font-black tracking-widest uppercase opacity-30 select-none">
-              {project.projectName.slice(0, 2)}
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Bottom Details Section */}
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <div className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
-              {project.projectDuration}
-            </span>
-            <h3 className="text-lg font-bold tracking-tight text-foreground transition-colors group-hover:text-foreground md:text-xl">
-              {project.projectName}
-            </h3>
-          </div>
-          <Tooltip delayDuration={0}>
-            <TooltipTrigger asChild>
-              <Link
-                href={project.liveLink}
-                target="_blank"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:border-muted-foreground hover:bg-muted-foreground/10"
-              >
-                <ExternalLink className="h-4 w-4" />
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{project.label}</p>
-            </TooltipContent>
-          </Tooltip>
+      <motion.div
+        whileHover={{ y: -6 }}
+        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md hover:border-muted-foreground"
+      >
+        {/* Top Image Container */}
+        <div className="relative aspect-16/10 w-full overflow-hidden border-b border-border bg-muted p-2">
+          {hasImage ? (
+            <Image
+              src={project.projectImage}
+              alt={project.projectName}
+              fill
+              sizes="(max-width: 768px) 100vw, 480px"
+              className="transition-transform duration-700 ease-out group-hover:scale-103"
+              priority
+            />
+          ) : (
+            /* Premium Fallback CSS Gradient */
+            <div className="absolute inset-0 bg-linear-to-br from-violet-600/90 via-indigo-600/90 to-blue-600/90 flex flex-col items-center justify-center text-white p-6">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px]" />
+              <span className="text-3xl font-black tracking-widest uppercase opacity-30 select-none">
+                {project.projectName.slice(0, 2)}
+              </span>
+            </div>
+          )}
         </div>
 
-        <p className="text-muted-foreground mt-3 text-xs leading-relaxed md:text-sm line-clamp-2">
-          {project.projectDescription}
-        </p>
+        {/* Bottom Details Section */}
+        <div className="flex flex-1 flex-col p-5 md:p-6">
+          <div className="flex items-start justify-between gap-3">
+            <div className="space-y-1">
+              <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
+                {project.projectDuration}
+              </span>
+              <h3 className="text-lg font-bold tracking-tight text-foreground transition-colors group-hover:text-foreground md:text-xl">
+                {project.projectName}
+              </h3>
+            </div>
+            <Tooltip delayDuration={0}>
+              <TooltipTrigger asChild>
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:border-muted-foreground hover:bg-muted-foreground/10"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{project.label}</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
 
-        {/* Tech Stack Skills Container */}
-        <div className="mt-auto pt-4">
-          <div className="flex flex-wrap gap-1.5">
-            {project.projectSkills.slice(0, 4).map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors"
-              >
-                {skill}
-              </span>
-            ))}
-            {project.projectSkills.length > 4 && (
-              <span className="rounded-full border border-border bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                +{project.projectSkills.length - 4}
-              </span>
-            )}
+          <p className="text-muted-foreground mt-3 text-xs leading-relaxed md:text-sm line-clamp-2">
+            {project.projectDescription}
+          </p>
+
+          {/* Tech Stack Skills Container */}
+          <div className="mt-auto pt-4">
+            <div className="flex flex-wrap gap-1.5">
+              {project.projectSkills.slice(0, 4).map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
+              {project.projectSkills.length > 4 && (
+                <span className="rounded-full border border-border bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                  +{project.projectSkills.length - 4}
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }

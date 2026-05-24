@@ -6,11 +6,14 @@ import ProjectCard from '@/components/projects/ProjectCard';
 import { projects } from '@/config/Projects';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, PanInfo, motion } from 'motion/react';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Projects() {
+  const router = useRouter();
   const [[activeIndex, direction], setActiveState] = useState([0, 0]);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   const totalCards = projects.length + 1; // Projects list + 1 "View All" card
 
@@ -55,6 +58,11 @@ export default function Projects() {
     } else if (offset > swipeThreshold) {
       slidePrev();
     }
+
+    // Set a tiny timeout so isDragging remains true until any click event on release fires and is blocked
+    setTimeout(() => {
+      setIsDragging(false);
+    }, 50);
   };
 
   // Directional sliding variants for single card viewport
@@ -129,10 +137,19 @@ export default function Projects() {
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.4}
+              onDragStart={() => setIsDragging(true)}
               onDragEnd={handleDragEnd}
               className="absolute h-full w-full cursor-grab active:cursor-grabbing"
             >
-              <ProjectCard project={activeProject} isViewAll={isViewAll} />
+              <ProjectCard
+                project={activeProject}
+                isViewAll={isViewAll}
+                onClick={(e) => {
+                  if (isDragging) {
+                    e.preventDefault();
+                  }
+                }}
+              />
             </motion.div>
           </AnimatePresence>
         </div>
