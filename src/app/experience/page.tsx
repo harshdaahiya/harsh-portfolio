@@ -1,13 +1,10 @@
 import Container from '@/components/common/Container';
 import ExperienceList from '@/components/experience/ExperienceList';
 import { experiences } from '@/config/Experience';
+import { getMetadata } from '@/config/MetaData';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Work Experience | Harsh Dahiya',
-  description:
-    'Work experience of Harsh Dahiya — Full Stack Engineer at Evoltsoft and previously at iTUX.',
-};
+export const metadata: Metadata = getMetadata('/experience');
 
 export default function WorkExperiencePage() {
   return (

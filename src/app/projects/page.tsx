@@ -1,15 +1,12 @@
 import Container from '@/components/common/Container';
 import ProjectList from '@/components/projects/ProjectList';
 import { Separator } from '@/components/ui/separator';
+import { getMetadata } from '@/config/MetaData';
 import { projects } from '@/config/Projects';
 import { Metadata } from 'next';
 import React from 'react';
 
-export const metadata: Metadata = {
-  title: 'Projects | Portfolio',
-  description:
-    'A comprehensive showcase of my featured projects, engineering work, and custom full-stack software applications.',
-};
+export const metadata: Metadata = getMetadata('/projects');
 
 export default function ProjectsPage() {
   return (
