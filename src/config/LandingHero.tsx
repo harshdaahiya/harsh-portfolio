@@ -18,13 +18,23 @@ export const socialLinks = [
     icon: 'github',
   },
   {
-    label: 'Email',
-    href: 'mailto:harshdaahiya@gmail.com',
-    icon: 'mail',
+    label: 'Twitter',
+    href: 'https://x.com/harshdaahiya',
+    icon: 'twitter',
   },
   {
-    label: 'X',
-    href: 'https://x.com/harshdaahiya',
-    icon: 'x',
+    label: 'Instagram',
+    href: 'https://instagram.com/harshdaahiya',
+    icon: 'instagram',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://youtube.com/@harshdaahiya',
+    icon: 'youtube',
+  },
+  {
+    label: 'Email',
+    href: 'mailto:harshdaahiya@gmail.com',
+    icon: 'email',
   },
 ];

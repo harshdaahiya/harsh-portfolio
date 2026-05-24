@@ -1,5 +1,7 @@
 import Container from '@/components/common/Container';
-import LucideIcon, { IconName } from '@/components/lucide-icons/LucideIconMap';
+import ReactIcon, {
+  ReactIconName,
+} from '@/components/react-icons/ReactIconMap';
 import { landingHeroConfig, socialLinks } from '@/config/LandingHero';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
@@ -21,15 +23,10 @@ export default function Hero() {
             {socialLinks.map((link) => (
               <Tooltip key={link.label} delayDuration={0}>
                 <TooltipTrigger asChild>
-                  <Link
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={link.label}
-                    href={link.href}
-                  >
-                    <LucideIcon
-                      name={link.icon as IconName}
-                      size={26}
+                  <Link target="_blank" key={link.label} href={link.href}>
+                    <ReactIcon
+                      name={link.icon as ReactIconName}
+                      size={22}
                       className="text-muted-foreground hover:text-foreground transition-colors"
                     />
                   </Link>

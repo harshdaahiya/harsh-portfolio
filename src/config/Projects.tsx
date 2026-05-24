@@ -1,5 +1,6 @@
 export interface project {
   projectName: string;
+  label: string;
   liveLink: string;
   projectImage: string;
   projectDescription: string;
@@ -11,6 +12,7 @@ export interface project {
 export const projects: project[] = [
   {
     projectName: 'Cravo E-Commerce Platform',
+    label: 'Visit Live Site',
     liveLink: 'https://cravo.online',
     projectImage: '/projects/harshdaahiya_cravo.png',
     projectDescription:
@@ -33,6 +35,7 @@ export const projects: project[] = [
   },
   {
     projectName: 'Retailix Platform',
+    label: 'Visit Live Site',
     liveLink: 'https://retailix.online',
     projectImage: '/projects/harshdaahiya_retailix.png',
     projectDescription:
@@ -55,6 +58,7 @@ export const projects: project[] = [
   },
   {
     projectName: 'Evolt Charging Platform',
+    label: 'Visit Company Profile',
     liveLink: 'https://www.linkedin.com/company/evoltsoft',
     projectImage: '', // Empty to trigger gorgeous gradient placeholder
     projectDescription:

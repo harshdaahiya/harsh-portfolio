@@ -106,20 +106,18 @@ export default function Projects() {
   const activeProject = !isViewAll ? projects[activeIndex] : undefined;
 
   return (
-    <Container className="py-16 md:py-24">
+    <div>
       {/* Header section */}
-      <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
-        <SectionHeading subHeading="Portfolio" heading="Featured Projects" />
-        <p className="text-muted-foreground mt-2 max-w-md text-sm md:mt-0 md:text-right">
-          A showcase of custom full-stack solutions, creative designs, and
-          performance-tuned software engineering.
-        </p>
-      </div>
+      <Container className="py-6 mt-4">
+        <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
+          <SectionHeading subHeading="Portfolio" heading="Featured Projects" />
+        </div>
+      </Container>
 
       {/* Single Card Centered Viewport (with wide screen overflow clipping) */}
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-4">
+      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-2">
         {/* Card slot container (overflow-visible to let card slide completely out) */}
-        <div className="relative flex h-[360px] w-full max-w-[290px] items-center justify-center overflow-visible py-2 md:h-[440px] md:max-w-[540px]">
+        <div className="relative flex h-[360px] w-full max-w-[290px] items-center justify-center overflow-visible py-2 md:h-[440px] md:max-w-[600px]">
           <AnimatePresence custom={direction} mode="popLayout" initial={false}>
             <motion.div
               key={activeIndex}
@@ -145,7 +143,7 @@ export default function Projects() {
           <button
             onClick={slidePrev}
             disabled={activeIndex === 0}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-all duration-300 hover:bg-muted hover:text-primary disabled:opacity-40 disabled:hover:bg-card disabled:hover:text-foreground md:h-12 md:w-12"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-all duration-300 hover:bg-muted hover:text-muted-foreground disabled:opacity-40 disabled:hover:bg-card disabled:hover:text-foreground md:h-12 md:w-12"
             aria-label="Previous Slide"
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
@@ -161,8 +159,8 @@ export default function Projects() {
                   onClick={() => handleDotClick(index)}
                   className={`h-2.5 rounded-full transition-all duration-500 ease-in-out ${
                     isActive
-                      ? 'w-7 bg-primary'
-                      : 'w-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                      ? 'w-7 bg-foreground'
+                      : 'w-2.5 bg-muted hover:bg-muted'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -174,13 +172,13 @@ export default function Projects() {
           <button
             onClick={slideNext}
             disabled={activeIndex === totalCards - 1}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-all duration-300 hover:bg-muted hover:text-primary disabled:opacity-40 disabled:hover:bg-card disabled:hover:text-foreground md:h-12 md:w-12"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-foreground transition-all duration-300 hover:bg-muted hover:text-muted-foreground disabled:opacity-40 disabled:hover:bg-card disabled:hover:text-foreground md:h-12 md:w-12"
             aria-label="Next Slide"
           >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
