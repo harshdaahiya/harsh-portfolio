@@ -59,13 +59,13 @@ export const footer: Footer = {
       icon: <LucideIcon name="star" size={20} />,
     },
     {
-      name: 'Contact',
-      href: '/contact',
+      name: 'Resume',
+      href: '/Resume',
       icon: <LucideIcon name="mail" size={20} />,
     },
     {
-      name: 'Journey',
-      href: '/journey',
+      name: 'Books',
+      href: '/books',
       icon: <LucideIcon name={'Train'} size={20} />,
     },
     {
