@@ -26,7 +26,7 @@ export default function Navbar() {
             <Link href="/resume">
               <Button variant="outline">Resume</Button>
             </Link>
-            <ThemeToggleButton variant="circle-blur" start="top-right" blur />
+            <ThemeToggleButton />
           </div>
         </div>
       </div>
