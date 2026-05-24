@@ -23,7 +23,9 @@ export default function Navbar() {
         </div>
         <div className="flex ">
           <div className="flex items-center gap-4">
-            <Button variant="outline">Resume</Button>
+            <Link href="/resume">
+              <Button variant="outline">Resume</Button>
+            </Link>
             <ThemeToggleButton variant="circle-blur" start="top-right" blur />
           </div>
         </div>

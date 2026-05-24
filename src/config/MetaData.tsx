@@ -48,6 +48,10 @@ export const pagesConfig: Record<string, PageMeta> = {
     title: `Contact | ${siteConfig.name}`,
     description: `Get in touch with ${siteConfig.name} for opportunities, collaborations, or questions.`,
   },
+  '/resume': {
+    title: `Resume | ${siteConfig.name}`,
+    description: `View and download the professional curriculum vitae / resume of ${siteConfig.name}, Full Stack Engineer.`,
+  },
 };
 
 /**
