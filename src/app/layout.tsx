@@ -1,3 +1,4 @@
+import Analytics from '@/components/analytics/Analytics';
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
@@ -33,6 +34,7 @@ export default function RootLayout({
               {children}
               <Footer />
             </TooltipProvider>
+            <Analytics />
           </ThemeProvider>
         </body>
       </html>
