@@ -17,7 +17,13 @@ export interface FooterNavigate {
 
 export interface FooterSocialIcons {
   name: string;
-  icon: React.ReactNode;
+  iconKey:
+    | 'linkedin'
+    | 'github'
+    | 'twitter'
+    | 'instagram'
+    | 'youtube'
+    | 'email';
   href: string;
   heading?: string;
 }
@@ -42,7 +48,6 @@ export const footer: Footer = {
       icon: <LucideIcon name="home" size={20} />,
       heading: 'NAVIGATE',
     },
-
     {
       name: 'Blog',
       href: '/blog',
@@ -58,7 +63,6 @@ export const footer: Footer = {
       href: '/contact',
       icon: <LucideIcon name="mail" size={20} />,
     },
-
     {
       name: 'Journey',
       href: '/journey',
@@ -73,34 +77,34 @@ export const footer: Footer = {
   socialIcons: [
     {
       name: 'Github',
-      icon: <LucideIcon name={'github'} size={20} />,
+      iconKey: 'github',
       href: 'https://github.com/harshdaahiya',
       heading: 'CONNECT',
     },
     {
       name: 'Linkedin',
-      icon: <LucideIcon name={'linkedin'} size={20} />,
+      iconKey: 'linkedin',
       href: 'https://linkedin.com/in/harshdaahiya/',
     },
     {
       name: 'X',
-      icon: <LucideIcon name={'x'} size={20} />,
+      iconKey: 'twitter',
       href: 'https://x.com/harshdaahiya',
     },
     {
       name: 'Instagram',
-      icon: <LucideIcon name={'instagram'} size={20} />,
+      iconKey: 'instagram',
       href: 'https://instagram.com/harshdaahiya',
     },
     {
       name: 'YouTube',
-      icon: <LucideIcon name={'Youtube'} size={20} />,
+      iconKey: 'youtube',
       href: 'https://www.youtube.com/@harshdaahiya',
     },
     {
-      name: 'Print',
-      icon: <LucideIcon name={'PrinterCheck'} size={20} />,
-      href: '',
+      name: 'Email',
+      iconKey: 'email',
+      href: 'mailto:harshdaahiya@gmail.com',
     },
   ],
 };

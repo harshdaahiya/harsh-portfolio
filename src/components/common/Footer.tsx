@@ -1,3 +1,6 @@
+import ReactIcon, {
+  ReactIconName,
+} from '@/components/react-icons/ReactIconMap';
 import { footer as FooterConfig } from '@/config/Footer';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -77,7 +80,10 @@ export default function Footer() {
                       key={item.name + index}
                       className="w-10 h-10 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                     >
-                      {item.icon}
+                      <ReactIcon
+                        name={item.iconKey as ReactIconName}
+                        size={20}
+                      />
                     </Link>
                   ))}
                 </div>
