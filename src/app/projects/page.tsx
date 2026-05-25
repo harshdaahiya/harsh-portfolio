@@ -1,4 +1,5 @@
 import Container from '@/components/common/Container';
+import PageHeader from '@/components/common/PageHeader';
 import ProjectList from '@/components/projects/ProjectList';
 import { Separator } from '@/components/ui/separator';
 import { getMetadata } from '@/config/MetaData';
@@ -12,16 +13,11 @@ export default function ProjectsPage() {
   return (
     <Container className="py-16">
       <div className="space-y-8 animate-page-in">
-        {/* Header */}
-        <div className="space-y-4">
-          <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
-            My Projects
-          </h1>
-          <p className="text-muted-foreground text-sm md:text-base max-w-xl">
-            A comprehensive showcase of my featured architecture designs,
-            production platforms, and engineering accomplishments.
-          </p>
-        </div>
+        <PageHeader
+          heading="My Projects"
+          description="A comprehensive showcase of my featured architecture designs,
+            production platforms, and engineering accomplishments."
+        />
 
         <Separator />
 

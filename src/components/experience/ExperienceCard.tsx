@@ -18,44 +18,55 @@ export default function ExperienceCard({
   const [isOpen, setIsOpen] = useState(index === 0);
 
   return (
-    <div className="group flex flex-col gap-4 py-6">
+    <div className="group flex flex-col gap-2 sm:gap-4 py-4">
       {/* Company Header */}
       <div
-        className="flex justify-between items-center wrap-normal cursor-pointer"
+        className="flex justify-between items-center gap-4 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex gap-4 items-center">
-          <div className="mt-1">
+          <div className="mt-1 shrink-0">
             <Image
               src={experience.companyLogo}
               alt={experience.company}
               width={100}
               height={100}
-              className="size-12 rounded-sm object-contain"
+              className="size-10 md:size-12 rounded-sm object-contain"
             />
           </div>
-          <h3 className="text-2xl font-bold text-foreground tracking-tight">
-            {experience.company}
-          </h3>
-          <button
-            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 rounded-full hover:bg-secondary text-muted-foreground"
-            aria-label="Toggle details"
-          >
-            <ChevronDown
-              className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-            />
-          </button>
-        </div>
-
-        <div className="flex items-center gap-4">
-          {experience.overallDuration && (
-            <div className="flex flex-col gap-2 text-right">
-              <p className="text-muted-foreground text-sm font-medium shrink-0">
-                {experience.overallDuration}
-              </p>
-              <p className="text-muted-foreground text-sm font-medium">
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
+                {experience.company}
+              </h2>
+              <button
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full hover:bg-secondary text-muted-foreground"
+                aria-label="Toggle details"
+              >
+                <ChevronDown
+                  className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                />
+              </button>
+            </div>
+            {experience.location && (
+              <p className="text-muted-foreground text-xs md:text-sm font-medium">
                 {experience.location}
               </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex items-center shrink-0">
+          {experience.timePeriod && (
+            <div className="flex flex-col gap-1 text-right">
+              <p className="text-muted-foreground text-xs sm:text-sm font-medium shrink-0 whitespace-nowrap">
+                {experience.timePeriod}
+              </p>
+              {experience.overallDuration && (
+                <p className="text-muted-foreground text-xs sm:text-sm font-medium shrink-0 whitespace-nowrap">
+                  {experience.overallDuration}
+                </p>
+              )}
             </div>
           )}
         </div>
@@ -79,7 +90,7 @@ export default function ExperienceCard({
                 {/* Role Header */}
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex flex-col">
-                    <h4 className="text-foreground font-semibold text-md">
+                    <h4 className="text-foreground font-semibold text-md sm:text-2xl">
                       {role.position}
                     </h4>
                     <p className="text-muted-foreground text-sm">
@@ -87,7 +98,7 @@ export default function ExperienceCard({
                     </p>
                   </div>
                 </div>
-                <h4 className="text-foreground font-semibold text-md">
+                <h4 className="text-foreground font-semibold text-md sm:text-2xl">
                   Work I did
                 </h4>
                 {/* Role Description */}
@@ -95,13 +106,13 @@ export default function ExperienceCard({
                   {role.descritption.map((desc: string, i: number) => (
                     <p
                       key={i}
-                      className="text-muted-foreground text-md font-medium -tracking-normal"
+                      className="text-muted-foreground text-sm md:text-md font-medium -tracking-normal"
                     >
                       • {desc}
                     </p>
                   ))}
                 </div>
-                <h4 className="text-foreground font-semibold text-md">
+                <h4 className="text-foreground font-semibold text-md sm:text-2xl">
                   Technology & Tools
                 </h4>
                 {/* Role Technologies */}

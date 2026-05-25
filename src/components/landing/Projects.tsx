@@ -114,7 +114,7 @@ export default function Projects() {
   return (
     <div>
       {/* Header section */}
-      <Container className="py-6 mt-4">
+      <Container className="py-4 sm:py-6 mt-4">
         <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
           <SectionHeading subHeading="Portfolio" heading="Featured Projects" />
         </div>

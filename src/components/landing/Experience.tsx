@@ -13,7 +13,7 @@ export default function Experience() {
       <SectionHeading subHeading="Experience" heading="Experience" />
       <ExperienceList experiences={experiences} />
       <div className="mt-7 flex justify-center">
-        <Button variant={'outline'} size="lg">
+        <Button variant={'outline'} size="sm">
           <Link href="/experience" className="text-foreground">
             View All Experience
           </Link>

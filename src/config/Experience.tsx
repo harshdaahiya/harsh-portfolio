@@ -29,6 +29,7 @@ export interface Role {
 export interface Experience {
   company: string;
   location: string;
+  timePeriod: string;
   image?: string;
   companyLogo: string;
   overallDuration?: string;
@@ -39,9 +40,10 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: 'Evoltsoft Technologies',
-    location: 'Pune, Maharashtra, India (Remote)',
-    overallDuration: 'Jan 2026 - Present · 5 mos',
+    company: 'Evoltsoft',
+    location: 'Pune, India (Remote)',
+    overallDuration: '5 mos',
+    timePeriod: 'Jan 26 - Present',
     image: '',
     companyLogo: '/company/evoltsoft.png',
     companyLinkedinPageUrl: 'https://www.linkedin.com/company/evoltsoft',
@@ -72,8 +74,9 @@ export const experiences: Experience[] = [
   },
   {
     company: 'iTUX',
-    location: 'Aurangabad, Maharashtra, India (Remote)',
-    overallDuration: 'Jun 2025 - Dec 2025 · 7 mos',
+    location: 'Aurangabad, India (Remote)',
+    timePeriod: 'Jun 25 - Dec 26',
+    overallDuration: '7 mos',
     image: '',
     companyLogo: '/company/iTUX.png',
     companyLinkedinPageUrl: 'https://www.linkedin.com/company/itux',

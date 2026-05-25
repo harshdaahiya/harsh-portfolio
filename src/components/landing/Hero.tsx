@@ -12,22 +12,23 @@ import GreetingInMultipleLanguage from './GreetingInMultipleLanguage';
 export default function Hero() {
   return (
     <Container className="">
-      <div className="flex items-center justify-between gap-2 py-10">
-        <div className="flex flex-col gap-2">
+      <div className="flex items-center justify-between gap-4 py-8 md:py-16">
+        <div className="flex flex-col md:gap-2">
           <GreetingInMultipleLanguage />
-          <h1 className="text-3xl font-semibold">{landingHeroConfig.name}</h1>
-          <p className="text-muted-foreground max-w-[500px] text-balance leading-relaxed">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+            {landingHeroConfig.name}
+          </h1>
+          <p className="text-muted-foreground max-w-[420px] md:max-w-[500px] text-sm md:text-base md:text-balance leading-relaxed">
             {landingHeroConfig.bio}
           </p>
-          <div className="flex items-center gap-3 mt-8">
+          <div className="flex items-center gap-2.5 sm:gap-4 mt-8">
             {socialLinks.map((link) => (
               <Tooltip key={link.label} delayDuration={0}>
                 <TooltipTrigger asChild>
                   <Link target="_blank" key={link.label} href={link.href}>
                     <ReactIcon
                       name={link.icon as ReactIconName}
-                      size={22}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
+                      className="size-4 md:size-6 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
                     />
                   </Link>
                 </TooltipTrigger>
@@ -36,7 +37,6 @@ export default function Hero() {
                 </TooltipContent>
               </Tooltip>
             ))}
-            <div />
           </div>
         </div>
         <Image
@@ -44,7 +44,7 @@ export default function Hero() {
           alt="Hero"
           width={100}
           height={100}
-          className="h-70 w-100 rounded-md"
+          className="hidden md:block h-70 w-100 rounded-md shrink-0 object-cover"
         />
       </div>
     </Container>

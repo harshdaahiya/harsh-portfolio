@@ -20,7 +20,7 @@ export default function Footer() {
               {/* Left Column */}
               <div className="flex flex-col gap-4 lg:w-5/12">
                 <div className="flex flex-col gap-3">
-                  <h2 className="text-xl font-medium text-muted-foreground tracking-tight leading-snug">
+                  <h2 className="text-lg sm:text-xl font-medium text-muted-foreground tracking-tight leading-snug">
                     {FooterConfig.message.message}
                   </h2>
                   <p className="text-muted-foreground text-sm">
@@ -47,15 +47,15 @@ export default function Footer() {
 
               {/* Middle Column (Links) */}
               <div className="">
-                <h2 className="text-md font-medium text-muted-foreground tracking-tight leading-snug">
+                <h2 className="text-sm sm:text-md  font-medium text-muted-foreground tracking-tight leading-snug">
                   {FooterConfig.navigate[0].heading}
                 </h2>
-                <div className="grid grid-cols-3 gap-x-20 gap-y-6 lg:w-3/12 pt-4">
+                <div className="grid grid-cols-3 gap-x-8 gap-y-4 md:gap-x-20 md:gap-y-6 lg:w-3/12 pt-4">
                   {FooterConfig.navigate.map((item, index) => (
                     <Link
                       href={item.href}
                       key={item.name + index}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-md w-fit"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-md w-fit"
                     >
                       {item.name}
                     </Link>
@@ -68,21 +68,21 @@ export default function Footer() {
 
               {/* Right Column (Socials) */}
               <div>
-                <h2 className="text-md font-medium text-muted-foreground tracking-tight leading-snug">
+                <h2 className="text-sm sm:text-md font-medium text-muted-foreground tracking-tight leading-snug">
                   {FooterConfig.socialIcons[0].heading}
                 </h2>
-                <div className="grid grid-cols-3 gap-x-14 gap-y-4 lg:w-3/12 pt-4">
+                <div className="flex flex-row flex-wrap gap-3 lg:grid lg:grid-cols-3 lg:gap-x-14 lg:gap-y-4 lg:w-3/12 pt-4">
                   {FooterConfig.socialIcons.map((item, index) => (
                     <Link
                       target="_blank"
                       rel="noopener noreferrer"
                       href={item.href}
                       key={item.name + index}
-                      className="w-10 h-10 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                     >
                       <ReactIcon
                         name={item.iconKey as ReactIconName}
-                        size={20}
+                        size={18}
                       />
                     </Link>
                   ))}
@@ -91,7 +91,7 @@ export default function Footer() {
             </div>
             <Separator className="mt-8" />
             {/* Bottom Message */}
-            <div className="mt-10 text-center text-md text-muted-foreground">
+            <div className="mt-10 text-center text-sm sm:text-md text-muted-foreground">
               © 2026 Harsh Dahiya @. All rights reserved.
             </div>
           </div>

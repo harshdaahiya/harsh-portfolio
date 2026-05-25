@@ -35,9 +35,9 @@ export default function GreetingInMultipleLanguage() {
   }, []);
 
   return (
-    <div className="flex min-h-[70px]">
+    <div className="flex min-h-[64px]">
       <h1
-        className={`text-5xl md:text-5xl font-semibold text-muted-foreground tracking-tight transition-opacity duration-1000 ease-in-out ${
+        className={`text-2xl sm:text-4xl lg:text-5xl font-semibold text-muted-foreground tracking-tight transition-opacity duration-1000 ease-in-out ${
           fade ? 'opacity-100' : 'opacity-0'
         }`}
       >

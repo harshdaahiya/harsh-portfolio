@@ -5,13 +5,10 @@ interface SectionHeadingProps {
   heading: string;
 }
 
-export default function SectionHeading({
-  subHeading,
-  heading,
-}: SectionHeadingProps) {
+export default function SectionHeading({ heading }: SectionHeadingProps) {
   return (
     <div>
-      <h2 className="text-3xl font-bold text-foreground py-2 tracking-tight">
+      <h2 className="text-xl md:text-2xl font-bold text-foreground py-2 tracking-tight">
         {heading}
       </h2>
       {/* <p className="text-foreground text-lg">{subHeading}</p>   */}
