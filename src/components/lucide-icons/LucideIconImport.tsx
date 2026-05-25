@@ -6,11 +6,7 @@ import {
   ChevronRight,
   ChevronUp,
   ExternalLink,
-  Facebook,
-  Github,
   Home,
-  Instagram,
-  Linkedin,
   Mail,
   Menu,
   Moon,
@@ -21,11 +17,8 @@ import {
   Settings,
   Star,
   Sun,
-  Ticket,
   Train,
-  Twitter,
   X,
-  Youtube,
 } from 'lucide-react';
 
 export const Icons = {
@@ -46,12 +39,7 @@ export const Icons = {
   Sun,
   X,
   MoonIcon,
-  Linkedin,
-  Twitter,
-  Github,
-  Instagram,
   Book,
   Train,
-  Youtube,
   PrinterCheck,
 };

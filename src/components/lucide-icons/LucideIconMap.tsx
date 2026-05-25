@@ -8,12 +8,6 @@ import { Icons } from './LucideIconImport';
  * For example: if I have to change the 'theme-toggle' icon from Sun to Moon, all components using 'theme-toggle' will update.
  */
 export const IconMap = {
-  // Brand Icons
-  linkedin: Icons.Linkedin,
-  x: Icons.Twitter,
-  github: Icons.Github,
-  instagram: Icons.Instagram,
-
   // UI Icons
   'chevron-down': Icons.ChevronDown,
   'chevron-up': Icons.ChevronUp,
@@ -27,7 +21,6 @@ export const IconMap = {
   check: Icons.Check,
   blog: Icons.Book,
   Train: Icons.Train,
-  Youtube: Icons.Youtube,
   PrinterCheck: Icons.PrinterCheck,
 
   // Feature Icons
