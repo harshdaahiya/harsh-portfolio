@@ -35,22 +35,68 @@ export default function ProjectList({ projects }: ProjectListProps) {
     },
   } as const;
 
+  const featuredProjects = projects.filter((p) => p.featured === true);
+  const otherProjects = projects.filter((p) => p.featured !== true);
+
   return (
     <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      className="space-y-16"
     >
-      {projects.map((proj) => (
-        <motion.div
-          key={proj.projectName}
-          variants={itemVariants}
-          className="h-[380px] w-full md:h-[440px]"
-        >
-          <ProjectCard project={proj} />
-        </motion.div>
-      ))}
+      {/* Featured Projects Section */}
+      {featuredProjects.length > 0 && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-between">
+            <h3 className="text-xl font-bold tracking-tight text-foreground md:text-2xl">
+              Featured Work
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {featuredProjects.map((proj) => (
+              <motion.div
+                key={proj.projectName}
+                variants={itemVariants}
+                className="h-[320px] w-full md:h-[350px]"
+              >
+                <ProjectCard project={proj} layout="vertical" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Other Projects Section */}
+      {otherProjects.length > 0 && (
+        <div className="space-y-8 pt-4">
+          <div className="relative">
+            <div
+              className="absolute inset-0 flex items-center"
+              aria-hidden="true"
+            >
+              <div className="w-full border-t border-border" />
+            </div>
+            <div className="relative flex justify-start">
+              <span className="bg-background pr-3 text-xl font-bold tracking-tight text-foreground md:text-2xl">
+                Other Engineering Work
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {otherProjects.map((proj) => (
+              <motion.div
+                key={proj.projectName}
+                variants={itemVariants}
+                className="w-full h-auto min-h-[380px] md:min-h-0 md:h-[220px]"
+              >
+                <ProjectCard project={proj} layout="horizontal" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 }

@@ -14,27 +14,19 @@ export default function ProjectsPage() {
       <div className="space-y-8 animate-page-in">
         {/* Header */}
         <div className="space-y-4">
-          <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
+          <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
             My Projects
           </h1>
+          <p className="text-muted-foreground text-sm md:text-base max-w-xl">
+            A comprehensive showcase of my featured architecture designs,
+            production platforms, and engineering accomplishments.
+          </p>
         </div>
 
         <Separator />
 
-        {/* Projects Grid */}
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">
-              Featured Portfolio
-              {projects.length > 0 && (
-                <span className="text-muted-foreground ml-2 text-sm font-normal">
-                  ({projects.length}{' '}
-                  {projects.length === 1 ? 'project' : 'projects'})
-                </span>
-              )}
-            </h2>
-          </div>
-
+        {/* Projects Sections */}
+        <div className="pt-2">
           <ProjectList projects={projects} />
         </div>
       </div>

@@ -14,7 +14,7 @@ export default function Experience() {
       <ExperienceList experiences={experiences} />
       <div className="mt-7 flex justify-center">
         <Button variant={'outline'} size="lg">
-          <Link href="/experiece" className="text-foreground">
+          <Link href="/experience" className="text-foreground">
             View All Experience
           </Link>
         </Button>

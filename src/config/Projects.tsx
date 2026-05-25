@@ -18,6 +18,7 @@ export interface project {
   projectResponsibility: string[];
   projectSkills: string[];
   projectContent: ProjectContent;
+  featured?: boolean;
 }
 
 export function getProjectBySlug(slug: string): project | undefined {
@@ -59,6 +60,7 @@ export const projects: project[] = [
       impact:
         'Delivered a production-grade platform processing live transactions with 99.9% uptime, sub-200ms page loads, and a fully automated order pipeline from checkout to fulfillment.',
     },
+    featured: true,
   },
   {
     slug: 'retailix-platform',
@@ -94,6 +96,7 @@ export const projects: project[] = [
       impact:
         'Successfully onboarded multiple enterprise clients with zero data leakage incidents. The cloud migration reduced infrastructure costs by 40% while improving response times by 3x.',
     },
+    featured: true,
   },
   {
     slug: 'evolt-charging',
@@ -129,5 +132,42 @@ export const projects: project[] = [
       impact:
         'Enabled live monitoring of charging infrastructure with real-time station status updates, power load balancing, and predictive maintenance alerts across the entire network.',
     },
+    featured: false,
+  },
+  {
+    slug: 'syncspace-workspace',
+    projectName: 'SyncSpace Collaborative Platform',
+    label: 'Visit Live Site',
+    liveLink: 'https://github.com/believeharsh', // Fallback to github profile since it's a personal project
+    projectImage: '', // Triggers gradient fallback
+    screenshots: [],
+    projectDescription:
+      'An AI-powered real-time collaborative workspace featuring canvas whiteboards, multi-user document editors, and low-latency audio calling channels.',
+    projectDuration: '4 Months',
+    projectResponsibility: [
+      'Designed a dynamic canvas whiteboard using HTML5 Canvas API with support for shape manipulation and drawings.',
+      'Integrated real-time operational transformation (OT) synchronization utilizing WebSockets.',
+      'Configured WebRTC mesh connections to enable voice calls without centralized media servers.',
+    ],
+    projectSkills: [
+      'TypeScript',
+      'React',
+      'Next.js',
+      'Tailwind CSS',
+      'Node.js',
+      'WebSockets',
+      'WebRTC',
+    ],
+    projectContent: {
+      overview:
+        'SyncSpace is a multi-user collaborative environment uniting layout sketching, writing, and direct calling into a unified interface.',
+      challenge:
+        'Building dynamic canvas rendering that scales to support dozens of concurrent drawing cursors globally without triggering browser layout thrashing.',
+      solution:
+        'Created an optimized canvas rendering cycle using requestAnimationFrame, coupled with delta operational transformations via WebSockets. Mesh WebRTC channels provide low-overhead direct communication.',
+      impact:
+        'Engineered an ultra-low latency collaboration workspace capable of running complex whiteboards with sub-50ms visual sync globally.',
+    },
+    featured: false,
   },
 ];

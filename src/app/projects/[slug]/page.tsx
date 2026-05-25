@@ -1,24 +1,49 @@
 import Container from '@/components/common/Container';
+import Skill from '@/components/common/Skills';
+import AWS from '@/components/svgs/technologies/AWS';
+import ExpressJs from '@/components/svgs/technologies/ExpressJs';
+import Firebase from '@/components/svgs/technologies/Firebase';
+import GCP from '@/components/svgs/technologies/GCP';
+import NextJs from '@/components/svgs/technologies/NextJs';
+import NodeJs from '@/components/svgs/technologies/NodeJs';
+import Ocpi from '@/components/svgs/technologies/Ocpi';
+import Ocpp from '@/components/svgs/technologies/Ocpp';
+import PostgreSQL from '@/components/svgs/technologies/PostgreSQL';
+import ReactIcon from '@/components/svgs/technologies/ReactIcon';
+import SocketIo from '@/components/svgs/technologies/SocketIo';
+import TailwindCss from '@/components/svgs/technologies/TailwindCss';
+import TypeScript from '@/components/svgs/technologies/TypeScript';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { siteConfig } from '@/config/MetaData';
 import { getProjectBySlug, projects } from '@/config/Projects';
-import { ArrowLeft, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Calendar, ExternalLink, Terminal } from 'lucide-react';
 import { Metadata } from 'next';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-/**
- * Pre-generate all project slugs at build time for static export.
- */
+const techIconMap: Record<string, React.ReactNode> = {
+  TypeScript: <TypeScript />,
+  'Next.js': <NextJs />,
+  React: <ReactIcon />,
+  'Node.js': <NodeJs />,
+  PostgreSQL: <PostgreSQL />,
+  'Tailwind CSS': <TailwindCss />,
+  AWS: <AWS />,
+  Express: <ExpressJs />,
+  Firebase: <Firebase />,
+  WebSockets: <SocketIo />,
+  GCP: <GCP />,
+  'OCPP/OCPI': <Ocpp />,
+  OCPP: <Ocpp />,
+  OCPI: <Ocpi />,
+};
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-/**
- * Dynamic SEO metadata per project.
- */
 export async function generateMetadata({
   params,
 }: {
@@ -64,10 +89,8 @@ function ContentSection({
   if (!content) return null;
   return (
     <div className="space-y-2">
-      <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </h3>
-      <p className="text-foreground/90 leading-relaxed">{content}</p>
+      <h3 className="text-md font-semibold text-foreground">{label}</h3>
+      <p className="text-muted-foreground leading-relaxed">{content}</p>
     </div>
   );
 }
@@ -189,7 +212,7 @@ export default async function ProjectDetailPage({
 
         {/* Key Responsibilities */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          <h3 className="text-md font-semibold  text-foreground">
             Key Responsibilities
           </h3>
           <ul className="space-y-3">
@@ -208,19 +231,18 @@ export default async function ProjectDetailPage({
 
         {/* Tech Stack */}
         <div className="space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-            Tech Stack
-          </h3>
+          <h3 className="text-md font-semibold text-foreground">Tech Stack</h3>
           <div className="flex flex-wrap gap-2">
-            {project.projectSkills.map((skill) => (
-              <Badge
-                key={skill}
-                variant="outline"
-                className="px-3 py-1 text-xs font-medium"
-              >
-                {skill}
-              </Badge>
-            ))}
+            {project.projectSkills.map((skill) => {
+              const icon = techIconMap[skill] || (
+                <Terminal className="size-4 text-muted-foreground" />
+              );
+              return (
+                <Skill key={skill} name={skill} href="">
+                  {icon}
+                </Skill>
+              );
+            })}
           </div>
         </div>
 

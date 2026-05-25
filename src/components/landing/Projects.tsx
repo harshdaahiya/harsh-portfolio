@@ -6,16 +6,14 @@ import ProjectCard from '@/components/projects/ProjectCard';
 import { projects } from '@/config/Projects';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { AnimatePresence, PanInfo, motion } from 'motion/react';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Projects() {
-  const router = useRouter();
   const [[activeIndex, direction], setActiveState] = useState([0, 0]);
   const [isMobile, setIsMobile] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
 
-  const totalCards = projects.length + 1; // Projects list + 1 "View All" card
+  const totalCards = projects.length + 1;
 
   // Listen to viewport changes for mobile responsiveness
   useEffect(() => {
@@ -139,7 +137,7 @@ export default function Projects() {
               dragElastic={0.4}
               onDragStart={() => setIsDragging(true)}
               onDragEnd={handleDragEnd}
-              className="absolute h-full w-full cursor-grab active:cursor-grabbing"
+              className="absolute h-full w-full"
             >
               <ProjectCard
                 project={activeProject}
