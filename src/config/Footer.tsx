@@ -60,7 +60,7 @@ export const footer: Footer = {
     },
     {
       name: 'Resume',
-      href: '/Resume',
+      href: '/resume',
       icon: <LucideIcon name="mail" size={20} />,
     },
     {
