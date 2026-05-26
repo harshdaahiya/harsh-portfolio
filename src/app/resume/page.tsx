@@ -1,5 +1,5 @@
 import Container from '@/components/common/Container';
-import ResumeViewer from '@/components/resume/ResumeViewer';
+import ResumeViewerWrapper from '@/components/resume/ResumeViewerWrapper';
 import { getMetadata } from '@/config/MetaData';
 import { Metadata } from 'next';
 
@@ -14,7 +14,7 @@ export default function ResumePage() {
 
   return (
     <Container className="py-12">
-      <ResumeViewer urls={urls} />
+      <ResumeViewerWrapper urls={urls} />
     </Container>
   );
 }
