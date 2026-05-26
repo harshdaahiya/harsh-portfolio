@@ -19,7 +19,7 @@ export default function ExperienceCard({
 
   return (
     <div
-      className="group flex flex-col gap-2 sm:gap-4 py-4
+      className="group flex flex-col gap-2 sm:gap-4 py-2 sm:py-4
     "
     >
       {/* Company Header */}
@@ -84,12 +84,9 @@ export default function ExperienceCard({
         }`}
       >
         <div className="overflow-hidden">
-          <div className="relative border-l-2 border-muted-foreground/30 ml-[23px] pl-8 mt-4 flex flex-col gap-8 pb-4">
+          <div className="relative border-l border-muted-foreground/30 ml-[23px] pl-6 mt-4 flex flex-col gap-8 pb-4">
             {experience.roles.map((role: Role, index: number) => (
               <div key={index} className="relative">
-                {/* Timeline Dot  */}
-                <div className="absolute -left-[40px] top-1.5 w-4 h-4 bg-muted-foreground/60 rounded-full ring-4 ring-background" />
-
                 {/* Role Header */}
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex flex-col">
