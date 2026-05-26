@@ -1,5 +1,6 @@
 import Analytics from '@/components/analytics/Analytics';
 import Footer from '@/components/common/Footer';
+import LenisSmoothScroll from '@/components/common/LenisSmoothScroll';
 import Navbar from '@/components/common/Navbar';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning>
         <body className={`font-hanken-grotesk antialiased`}>
           <ThemeProvider
             attribute="class"
@@ -30,9 +31,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <TooltipProvider>
-              <Navbar />
-              {children}
-              <Footer />
+              <LenisSmoothScroll>
+                <Navbar />
+                {children}
+                <Footer />
+              </LenisSmoothScroll>
             </TooltipProvider>
             <Analytics />
           </ThemeProvider>
