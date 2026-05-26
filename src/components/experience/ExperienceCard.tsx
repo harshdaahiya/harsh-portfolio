@@ -18,7 +18,10 @@ export default function ExperienceCard({
   const [isOpen, setIsOpen] = useState(index === 0);
 
   return (
-    <div className="group flex flex-col gap-2 sm:gap-4 py-4">
+    <div
+      className="group flex flex-col gap-2 sm:gap-4 py-4
+    "
+    >
       {/* Company Header */}
       <div
         className="flex justify-between items-center gap-4 cursor-pointer"
@@ -36,7 +39,7 @@ export default function ExperienceCard({
           </div>
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
-              <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
                 {experience.company}
               </h2>
               <button
@@ -49,7 +52,7 @@ export default function ExperienceCard({
               </button>
             </div>
             {experience.location && (
-              <p className="text-muted-foreground text-xs md:text-sm font-medium">
+              <p className="text-muted-foreground text-md tracking-normal">
                 {experience.location}
               </p>
             )}
@@ -59,11 +62,11 @@ export default function ExperienceCard({
         <div className="flex items-center shrink-0">
           {experience.timePeriod && (
             <div className="flex flex-col gap-1 text-right">
-              <p className="text-muted-foreground text-xs sm:text-sm font-medium shrink-0 whitespace-nowrap">
+              <p className="text-muted-foreground text-md tracking-normal whitespace-nowrap">
                 {experience.timePeriod}
               </p>
               {experience.overallDuration && (
-                <p className="text-muted-foreground text-xs sm:text-sm font-medium shrink-0 whitespace-nowrap">
+                <p className="text-muted-foreground text-md tracking-normal whitespace-nowrap">
                   {experience.overallDuration}
                 </p>
               )}
@@ -90,31 +93,31 @@ export default function ExperienceCard({
                 {/* Role Header */}
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex flex-col">
-                    <h4 className="text-foreground font-semibold text-md sm:text-2xl">
+                    <h3 className="text-foreground font-semibold text-md tracking-normal">
                       {role.position}
-                    </h4>
-                    <p className="text-muted-foreground text-sm">
+                    </h3>
+                    <h3 className="text-muted-foreground text-md tracking-normal">
                       {role.startDate} - {role.endDate} . {role.duration}
-                    </p>
+                    </h3>
                   </div>
                 </div>
-                <h4 className="text-foreground font-semibold text-md sm:text-2xl">
+                <h3 className="text-foreground font-semibold text-md tracking-normal">
                   Work I did
-                </h4>
+                </h3>
                 {/* Role Description */}
                 <div className="flex flex-col gap-2 mb-4">
                   {role.descritption.map((desc: string, i: number) => (
                     <p
                       key={i}
-                      className="text-muted-foreground text-sm md:text-md font-medium -tracking-normal"
+                      className="text-muted-foreground text-md tracking-normal"
                     >
                       • {desc}
                     </p>
                   ))}
                 </div>
-                <h4 className="text-foreground font-semibold text-md sm:text-2xl">
+                <h3 className="text-foreground font-semibold text-md tracking-normal">
                   Technology & Tools
-                </h4>
+                </h3>
                 {/* Role Technologies */}
                 {role.technologies && role.technologies.length > 0 && (
                   <div className="flex flex-wrap gap-2 mt-2">
