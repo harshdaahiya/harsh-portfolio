@@ -11,7 +11,7 @@ import Container from './Container';
 
 export default function Footer() {
   return (
-    <div className="">
+    <footer className="">
       <Separator className="mt-8" />
       <div className="">
         <Container>
@@ -97,6 +97,6 @@ export default function Footer() {
           </div>
         </Container>
       </div>
-    </div>
+    </footer>
   );
 }
