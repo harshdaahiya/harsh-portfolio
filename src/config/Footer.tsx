@@ -70,7 +70,7 @@ export const footer: Footer = {
     },
     {
       name: 'Experience',
-      href: '#experience',
+      href: '/experience',
       icon: <LucideIcon name="star" size={20} />,
     },
   ],
