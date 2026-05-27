@@ -11,7 +11,7 @@ export const BrowserDeveloperGraphic = () => {
         <style>{`
           @keyframes fsg-floatY {
             0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-7px); }
+            50%       { transform: translateY(-3px); }
           }
           @keyframes fsg-fadeUp {
             from { opacity: 0; transform: translateY(10px); }
@@ -54,16 +54,6 @@ export const BrowserDeveloperGraphic = () => {
           .fsg-f8 { animation: fsg-fadeUp .6s ease forwards 2.2s; opacity: 0; }
         `}</style>
       </defs>
-
-      {/* Ground shadow */}
-      <ellipse
-        cx="250"
-        cy="462"
-        rx="140"
-        ry="10"
-        fill="currentColor"
-        opacity="0.05"
-      />
 
       {/* ── BROWSER WINDOW (floats) ── */}
       <g className="fsg-float">
@@ -142,7 +132,7 @@ export const BrowserDeveloperGraphic = () => {
           fontFamily="monospace"
           fontSize="8"
           fill="currentColor"
-          opacity="0.25"
+          opacity="0.55"
         >
           https://harshdahiya.dev
         </text>
@@ -543,7 +533,7 @@ export const BrowserDeveloperGraphic = () => {
             fontFamily="monospace"
             fontSize="7"
             fill="currentColor"
-            opacity="0.22"
+            opacity="0.65"
           >
             $ npm run dev
           </text>
@@ -553,7 +543,7 @@ export const BrowserDeveloperGraphic = () => {
             fontFamily="monospace"
             fontSize="7"
             fill="currentColor"
-            opacity="0.16"
+            opacity="0.45"
           >
             ▶ ready on localhost:3000
           </text>
@@ -563,7 +553,7 @@ export const BrowserDeveloperGraphic = () => {
             fontFamily="monospace"
             fontSize="7"
             fill="currentColor"
-            opacity="0.14"
+            opacity="0.4"
           >
             ✓ compiled in 842ms
           </text>
@@ -573,7 +563,7 @@ export const BrowserDeveloperGraphic = () => {
             fontFamily="monospace"
             fontSize="7"
             fill="currentColor"
-            opacity="0.12"
+            opacity="0.35"
           >
             ○ / (static)
           </text>
@@ -583,7 +573,7 @@ export const BrowserDeveloperGraphic = () => {
             fontFamily="monospace"
             fontSize="7"
             fill="currentColor"
-            opacity="0.22"
+            opacity="0.65"
           >
             $
           </text>
@@ -643,7 +633,7 @@ export const BrowserDeveloperGraphic = () => {
           fontFamily="monospace"
           fontSize="8"
           fill="currentColor"
-          opacity="0.25"
+          opacity="0.6"
         >
           REST / GQL
         </text>
@@ -656,12 +646,12 @@ export const BrowserDeveloperGraphic = () => {
           y2="214"
           stroke="currentColor"
           strokeWidth="1"
-          opacity="0.18"
+          opacity="0.3"
         />
         <polygon
           points="470,209 462,214 470,219"
           fill="currentColor"
-          opacity="0.18"
+          opacity="0.3"
         />
         <text
           x="474"
@@ -669,7 +659,7 @@ export const BrowserDeveloperGraphic = () => {
           fontFamily="monospace"
           fontSize="8"
           fill="currentColor"
-          opacity="0.18"
+          opacity="0.5"
         >
           JSON
         </text>
@@ -711,7 +701,7 @@ export const BrowserDeveloperGraphic = () => {
           fontSize="7"
           textAnchor="middle"
           fill="currentColor"
-          opacity="0.28"
+          opacity="0.6"
         >
           server.js
         </text>
@@ -739,7 +729,7 @@ export const BrowserDeveloperGraphic = () => {
               fontFamily="monospace"
               fontSize="6.5"
               fill="currentColor"
-              opacity="0.22"
+              opacity="0.55"
             >
               {label}
             </text>
@@ -810,7 +800,7 @@ export const BrowserDeveloperGraphic = () => {
           fontSize="6.5"
           textAnchor="middle"
           fill="currentColor"
-          opacity="0.2"
+          opacity="0.55"
         >
           DB
         </text>
@@ -839,46 +829,46 @@ export const BrowserDeveloperGraphic = () => {
       {/* ── TECH STACK CHIPS ── */}
       <g className="fsg-f8">
         {[
-          { x: 68, label: 'React', w: 44 },
-          { x: 120, label: 'Next.js', w: 50 },
-          { x: 178, label: 'Node', w: 44 },
-          { x: 230, label: 'TypeScript', w: 66 },
-          { x: 304, label: 'PostgreSQL', w: 70 },
+          { x: 60, label: 'React', w: 52 },
+          { x: 120, label: 'Next.js', w: 58 },
+          { x: 186, label: 'Node', w: 52 },
+          { x: 246, label: 'TypeScript', w: 76 },
+          { x: 330, label: 'PostgreSQL', w: 80 },
         ].map(({ x, label, w }) => (
           <g key={label}>
             <rect
               x={x}
-              y="16"
+              y="12"
               width={w}
-              height="18"
-              rx="9"
+              height="22"
+              rx="11"
+              fill="currentColor"
+              opacity="0.08"
+            />
+            <rect
+              x={x}
+              y="12"
+              width={w}
+              height="22"
+              rx="11"
               stroke="currentColor"
-              strokeWidth="0.75"
-              opacity="0.32"
+              strokeWidth="1"
+              opacity="0.5"
             />
             <text
               x={x + w / 2}
-              y="28"
-              fontFamily=""
-              fontSize="7.5"
+              y="27"
+              fontFamily="monospace"
+              fontSize="8.5"
+              fontWeight="600"
               textAnchor="middle"
               fill="currentColor"
-              opacity="0.6"
+              opacity="0.85"
             >
               {label}
             </text>
           </g>
         ))}
-        <line
-          x1="200"
-          y1="34"
-          x2="200"
-          y2="40"
-          stroke="currentColor"
-          strokeWidth="0.5"
-          strokeDasharray="2 3"
-          opacity="0.1"
-        />
       </g>
     </svg>
   );

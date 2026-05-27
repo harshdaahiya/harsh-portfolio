@@ -26,7 +26,7 @@ export default function Navbar() {
               <Link href="/resume">
                 <Button
                   variant="outline"
-                  className="h-8 px-2.5 text-xs sm:h-9 sm:px-4 sm:text-sm cursor-pointer font-semibold tracking-wide transition-colors duration-200"
+                  className="h-8 px-2.5 text-xs sm:h-9 sm:px-4 sm:text-sm cursor-pointer font-semibold tracking-wide duration-200"
                 >
                   Resume
                 </Button>
