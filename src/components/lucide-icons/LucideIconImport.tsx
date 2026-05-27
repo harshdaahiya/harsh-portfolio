@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   Book,
   Check,
   ChevronDown,
@@ -42,4 +43,5 @@ export const Icons = {
   Book,
   Train,
   PrinterCheck,
+  ArrowRight,
 };

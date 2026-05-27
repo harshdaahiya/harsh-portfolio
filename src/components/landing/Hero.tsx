@@ -4,8 +4,8 @@ import ReactIcon, {
 } from '@/components/react-icons/ReactIconMap';
 import { landingHeroConfig, socialLinks } from '@/config/LandingHero';
 import { Link } from 'next-view-transitions';
-import Image from 'next/image';
 
+import { BrowserDeveloperGraphic } from '../svgs/graphics/BrowserDeveloperGraphic';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import GreetingInMultipleLanguage from './GreetingInMultipleLanguage';
 
@@ -39,13 +39,7 @@ export default function Hero() {
             ))}
           </div>
         </div>
-        <Image
-          src={landingHeroConfig.imageUrl}
-          alt="Hero"
-          width={100}
-          height={100}
-          className="hidden md:block h-70 w-100 rounded-md shrink-0 object-cover"
-        />
+        <BrowserDeveloperGraphic />
       </div>
     </Container>
   );

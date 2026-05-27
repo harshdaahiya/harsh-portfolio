@@ -1,12 +1,12 @@
 'use client';
 
 import { project } from '@/config/Projects';
-import { ArrowRight, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'next-view-transitions';
 import Image from 'next/image';
 import React from 'react';
 
+import LucideIcon from '../lucide-icons/LucideIconMap';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 
 interface ProjectCardProps {
@@ -35,7 +35,7 @@ export default function ProjectCard({
           <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-muted-foreground/10 blur-3xl" />
 
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-foreground/10 text-foreground transition-transform duration-300">
-            <ArrowRight className="h-6 w-6 animate-pulse" />
+            <LucideIcon name="arrow-right" className="h-6 w-6 animate-pulse" />
           </div>
 
           <h3 className="mt-5 text-xl font-bold tracking-tight text-foreground md:text-2xl">
@@ -113,15 +113,21 @@ export default function ProjectCard({
               </div>
               <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild>
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(
+                        project.liveLink,
+                        '_blank',
+                        'noopener,noreferrer',
+                      );
+                    }}
                     className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:border-muted-foreground hover:bg-muted-foreground/10"
                   >
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
+                    <LucideIcon name="arrow-right" className="h-4 w-4" />
+                  </button>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>{project.label}</p>

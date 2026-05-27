@@ -13,6 +13,7 @@ export const IconMap = {
   'chevron-up': Icons.ChevronUp,
   'chevron-left': Icons.ChevronLeft,
   'chevron-right': Icons.ChevronRight,
+  'arrow-right': Icons.ArrowRight,
   menu: Icons.Menu,
   close: Icons.X,
   search: Icons.Search,

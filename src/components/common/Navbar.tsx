@@ -31,7 +31,7 @@ export default function Navbar() {
                   Resume
                 </Button>
               </Link>
-              <ThemeToggleButton className="size-8 sm:size-10 [&_svg]:size-3.5 sm:[&_svg]:size-4" />
+              <ThemeToggleButton className="size-8 sm:size-10 [&_svg]:size-3.5 sm:[&_svg]:size-5" />
             </div>
           </div>
         </div>
