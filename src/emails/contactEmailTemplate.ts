@@ -50,7 +50,7 @@ export function contactEmailTemplate({
                     <table cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="background:#ffffff;border-radius:8px;padding:6px 10px;">
-                          <img src="https://drive.google.com/file/d/1ylRJE9Fx_m_Y06PwgYjcBUCoyl69-DK1/view?usp=sharing" alt="Harsh Dahiya" height="28" style="display:block;height:28px;width:auto;border:0;" />
+                          <img src="https://res.cloudinary.com/dd5elqfus/image/upload/v1779953426/harsh_dahiya_2_light_tkjfcd.png" alt="Harsh Dahiya" height="28" style="display:block;height:28px;width:auto;border:0;" />
                         </td>
                         <td style="padding-left:12px;">
                           <span style="font-family:'Inter',Helvetica,Arial,sans-serif;font-size:13px;font-weight:500;color:#888888;letter-spacing:0.3px;">
@@ -182,7 +182,7 @@ export function contactEmailTemplate({
 
                         <!-- LinkedIn -->
                         <td style="padding-right:10px;">
-                          <a href="https://linkedin.com/in/harshdahiyaa" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
+                          <a href="https://linkedin.com/in/harshdaahiya" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
                             <table cellpadding="0" cellspacing="0">
                               <tr>
                                 <td style="padding-right:6px;">
@@ -201,7 +201,7 @@ export function contactEmailTemplate({
 
                         <!-- Twitter / X -->
                         <td>
-                          <a href="https://twitter.com/harshdahiyaa" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
+                          <a href="https://twitter.com/harshdaahiya" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
                             <table cellpadding="0" cellspacing="0">
                               <tr>
                                 <td style="padding-right:6px;">
@@ -220,7 +220,7 @@ export function contactEmailTemplate({
 
                         <!-- Instagram -->
                         <td style="padding-left:10px;">
-                          <a href="https://instagram.com/harshdahiyaa" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
+                          <a href="https://instagram.com/harshdaahiya" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
                             <table cellpadding="0" cellspacing="0">
                               <tr>
                                 <td style="padding-right:6px;">
@@ -238,7 +238,7 @@ export function contactEmailTemplate({
 
                         <!-- YouTube -->
                         <td style="padding-left:10px;">
-                          <a href="https://youtube.com/@harshdahiyaa" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
+                          <a href="https://youtube.com/@harshdaahiya" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
                             <table cellpadding="0" cellspacing="0">
                               <tr>
                                 <td style="padding-right:6px;">
