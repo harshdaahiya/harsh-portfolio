@@ -43,7 +43,14 @@ export const pagesConfig: Record<string, PageMeta> = {
     title: `Work Experience | ${siteConfig.name}`,
     description: `Professional work experiences and software engineering roles of ${siteConfig.name}.`,
   },
-  // Adding contact and others as requested/extensible placeholders
+  '/blog': {
+    title: `Blog | ${siteConfig.name}`,
+    description: `Thoughts, learnings, and writings by ${siteConfig.name} on software engineering and beyond.`,
+  },
+  '/content': {
+    title: `Content | ${siteConfig.name}`,
+    description: `Videos, shorts, and content created by ${siteConfig.name} on software engineering and tech.`,
+  },
   '/contact': {
     title: `Contact | ${siteConfig.name}`,
     description: `Get in touch with ${siteConfig.name} for opportunities, collaborations, or questions.`,

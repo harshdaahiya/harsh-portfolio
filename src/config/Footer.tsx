@@ -64,8 +64,8 @@ export const footer: Footer = {
       icon: <LucideIcon name="mail" size={20} />,
     },
     {
-      name: 'Books',
-      href: '/books',
+      name: 'Content',
+      href: '/content',
       icon: <LucideIcon name={'Train'} size={20} />,
     },
     {
