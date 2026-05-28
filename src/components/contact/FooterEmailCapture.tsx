@@ -2,7 +2,7 @@
 
 import { ArrowUpRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function FooterEmailCapture() {
   const router = useRouter();
@@ -24,6 +24,13 @@ export default function FooterEmailCapture() {
     setError('');
     router.push(`/contact?email=${encodeURIComponent(trimmed)}`);
   };
+
+  // Listen to a custom event to clear the footer email input when contact is sent successfully
+  useEffect(() => {
+    const handleClear = () => setEmail('');
+    window.addEventListener('clear-footer-email', handleClear);
+    return () => window.removeEventListener('clear-footer-email', handleClear);
+  }, []);
 
   return (
     <div className="flex flex-col gap-1.5">
