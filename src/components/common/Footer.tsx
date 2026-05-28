@@ -2,10 +2,10 @@ import ReactIcon, {
   ReactIconName,
 } from '@/components/react-icons/ReactIconMap';
 import { footer as FooterConfig } from '@/config/Footer';
-import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
+import FooterEmailCapture from '../contact/FooterEmailCapture';
 import { Separator } from '../ui/separator';
 import Container from './Container';
 
@@ -29,16 +29,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col gap-4 mt-6">
-                  <div className="flex items-center w-full max-w-sm rounded-full border bg-background p-1 pl-4">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="bg-transparent flex-1 outline-none text-sm placeholder:text-muted-foreground"
-                    />
-                    <button className="rounded-full bg-secondary text-secondary-foreground p-2 hover:opacity-90 transition-opacity">
-                      <ArrowUpRight size={16} />
-                    </button>
-                  </div>
+                  <FooterEmailCapture />
                 </div>
               </div>
 
