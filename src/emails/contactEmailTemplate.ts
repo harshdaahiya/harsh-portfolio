@@ -163,7 +163,7 @@ export function contactEmailTemplate({
 
                         <!-- GitHub -->
                         <td style="padding-right:10px;">
-                          <a href="https://github.com/harshdahiyaa" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
+                          <a href="https://github.com/harshdaahiya" style="display:inline-block;background:#ffffff;border:1px solid #e0e0e0;border-radius:8px;padding:8px 14px;text-decoration:none;">
                             <table cellpadding="0" cellspacing="0">
                               <tr>
                                 <td style="padding-right:6px;">
