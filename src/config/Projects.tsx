@@ -31,6 +31,7 @@ export const projects: project[] = [
     projectName: 'Cravo E-Commerce Platform',
     label: 'Visit Live Site',
     liveLink: 'https://cravo.online',
+    githubLink: 'https://github.com/harshdaahiya/cravo',
     projectImage: '/projects/harshdaahiya_cravo.png',
     screenshots: [],
     projectDescription:
@@ -67,6 +68,7 @@ export const projects: project[] = [
     projectName: 'Retailix Platform',
     label: 'Visit Live Site',
     liveLink: 'https://retailix.online',
+    githubLink: 'https://github.com/harshdaahiya/cravo',
     projectImage: '/projects/harshdaahiya_retailix.png',
     screenshots: [],
     projectDescription:
@@ -139,6 +141,7 @@ export const projects: project[] = [
     projectName: 'SyncSpace Collaborative Platform',
     label: 'Visit Live Site',
     liveLink: 'https://github.com/believeharsh', // Fallback to github profile since it's a personal project
+    githubLink: 'https://github.com/harshdaahiya/cravo',
     projectImage: '', // Triggers gradient fallback
     screenshots: [],
     projectDescription:
