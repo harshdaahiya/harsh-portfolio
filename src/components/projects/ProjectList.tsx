@@ -53,12 +53,12 @@ export default function ProjectList({ projects }: ProjectListProps) {
               Featured Work
             </h3>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {featuredProjects.map((proj) => (
               <motion.div
                 key={proj.projectName}
                 variants={itemVariants}
-                className="h-[320px] w-full md:h-[350px]"
+                className="w-full"
               >
                 <ProjectCard project={proj} layout="vertical" />
               </motion.div>
@@ -89,7 +89,7 @@ export default function ProjectList({ projects }: ProjectListProps) {
               <motion.div
                 key={proj.projectName}
                 variants={itemVariants}
-                className="w-full h-auto min-h-[380px] md:min-h-0 md:h-[220px]"
+                className="w-full"
               >
                 <ProjectCard project={proj} layout="horizontal" />
               </motion.div>

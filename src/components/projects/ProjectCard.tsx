@@ -61,53 +61,64 @@ export default function ProjectCard({
       className="block h-full w-full"
     >
       <motion.div
-        whileHover={isHorizontal ? { x: 6 } : { y: -6 }}
-        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-        className={`group flex h-full w-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:shadow-md hover:border-muted-foreground ${
+        whileHover={isHorizontal ? { x: 4 } : { y: -5 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className={`group relative flex h-full w-full overflow-hidden rounded-[20px] border border-border bg-card transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:border-muted-foreground/40 ${
           isHorizontal ? 'flex-col md:flex-row' : 'flex-col'
         }`}
       >
-        {/* Image Container */}
         <div
-          className={`relative overflow-hidden bg-muted p-2 ${
-            isHorizontal
-              ? 'aspect-16/10 md:aspect-auto md:w-[320px] shrink-0 border-b md:border-b-0 md:border-r border-border'
-              : 'aspect-16/10 w-full border-b border-border'
+          className={`relative shrink-0 bg-muted/50 dark:bg-muted/30 ${
+            isHorizontal ? 'p-3 md:w-[300px] lg:w-[340px]' : 'p-3 w-full'
           }`}
         >
-          {hasImage ? (
-            <Image
-              src={project.projectImage}
-              alt={project.projectName}
-              fill
-              sizes={
-                isHorizontal
-                  ? '(max-width: 768px) 100vw, 320px'
-                  : '(max-width: 768px) 100vw, 480px'
-              }
-              className="transition-transform duration-700 ease-out group-hover:scale-103 object-cover"
-              priority
-            />
-          ) : (
-            /* Premium Fallback CSS Gradient */
-            <div className="absolute inset-0 bg-linear-to-br from-violet-600/90 via-indigo-600/90 to-blue-600/90 flex flex-col items-center justify-center text-white p-6">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px]" />
-              <span className="text-3xl font-black tracking-widest uppercase opacity-30 select-none">
-                {project.projectName.slice(0, 2)}
-              </span>
-            </div>
-          )}
+          <div
+            className={`relative overflow-hidden rounded-[14px] shadow-sm ${
+              isHorizontal
+                ? 'aspect-16/10 md:aspect-auto md:h-full'
+                : 'aspect-2/1'
+            }`}
+          >
+            {hasImage ? (
+              <Image
+                src={project.projectImage}
+                alt={project.projectName}
+                fill
+                sizes={
+                  isHorizontal
+                    ? '(max-width: 768px) 100vw, 340px'
+                    : '(max-width: 768px) 100vw, 480px'
+                }
+                className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                priority
+              />
+            ) : (
+              <div className="absolute inset-0 bg-linear-to-br from-violet-600/90 via-indigo-600/90 to-blue-600/90 flex flex-col items-center justify-center text-white p-6">
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] bg-size-[16px_16px]" />
+                <span className="text-3xl font-black tracking-widest uppercase opacity-30 select-none">
+                  {project.projectName.slice(0, 2)}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Bottom/Right Details Section */}
-        <div className="flex flex-1 flex-col p-5 md:p-6 justify-between">
+        {/* Details Section */}
+        <div
+          className={`flex flex-1 flex-col ${
+            isHorizontal
+              ? 'p-4 md:p-5 lg:p-6 justify-between'
+              : 'px-4 pb-4 pt-3 md:px-5 md:pb-5 md:pt-3.5'
+          }`}
+        >
+          {/* Top: Title + Arrow */}
           <div>
             <div className="flex items-start justify-between gap-3">
-              <div className="space-y-1">
-                <span className="text-[10px] font-bold tracking-wider text-muted-foreground uppercase">
+              <div className="min-w-0 flex-1">
+                <span className="text-[10px] font-semibold tracking-[0.12em] text-muted-foreground/60 uppercase">
                   {project.projectDuration}
                 </span>
-                <h3 className="text-lg font-bold tracking-tight text-foreground transition-colors group-hover:text-foreground md:text-xl">
+                <h3 className="mt-0.5 text-[15px] font-bold leading-snug tracking-tight text-foreground md:text-[17px]">
                   {project.projectName}
                 </h3>
               </div>
@@ -124,9 +135,12 @@ export default function ProjectCard({
                         'noopener,noreferrer',
                       );
                     }}
-                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:border-muted-foreground hover:bg-muted-foreground/10"
+                    className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 hover:scale-110 hover:shadow-md"
                   >
-                    <LucideIcon name="arrow-right" className="h-4 w-4" />
+                    <LucideIcon
+                      name="arrow-right"
+                      className="h-3.5 w-3.5 -rotate-45"
+                    />
                   </button>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -135,28 +149,32 @@ export default function ProjectCard({
               </Tooltip>
             </div>
 
-            <p className="text-muted-foreground mt-3 text-xs leading-relaxed md:text-sm line-clamp-2">
+            <p
+              className={`text-muted-foreground mt-2 text-[12px] leading-relaxed md:text-[13px] ${
+                isHorizontal ? 'line-clamp-2 md:line-clamp-3' : 'line-clamp-2'
+              }`}
+            >
               {project.projectDescription}
             </p>
           </div>
 
-          {/* Tech Stack Skills Container */}
-          <div className="mt-4 pt-2">
-            <div className="flex flex-wrap gap-1.5">
-              {project.projectSkills.slice(0, 5).map((skill) => (
+          {/* Bottom: Tech Stack Pills */}
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
+            {project.projectSkills
+              .slice(0, isHorizontal ? 6 : 4)
+              .map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-[10px] font-medium text-muted-foreground transition-colors"
+                  className="rounded-full bg-muted/80 dark:bg-muted/50 px-2.5 py-1 text-[10px] font-medium text-muted-foreground"
                 >
                   {skill}
                 </span>
               ))}
-              {project.projectSkills.length > 5 && (
-                <span className="rounded-full border border-border bg-muted/50 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                  +{project.projectSkills.length - 5}
-                </span>
-              )}
-            </div>
+            {project.projectSkills.length > (isHorizontal ? 6 : 4) && (
+              <span className="rounded-full bg-muted/80 dark:bg-muted/50 px-2 py-1 text-[10px] font-medium text-muted-foreground">
+                +{project.projectSkills.length - (isHorizontal ? 6 : 4)}
+              </span>
+            )}
           </div>
         </div>
       </motion.div>

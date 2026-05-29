@@ -123,7 +123,7 @@ export default function Projects() {
       {/* Single Card Centered Viewport (with wide screen overflow clipping) */}
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-2">
         {/* Card slot container (overflow-visible to let card slide completely out) */}
-        <div className="relative flex h-[360px] w-full max-w-[290px] items-center justify-center overflow-visible py-2 md:h-[440px] md:max-w-[600px]">
+        <div className="relative flex h-[400px] w-[92vw] max-w-[380px] items-center justify-center overflow-visible py-2 md:h-[440px] md:w-full md:max-w-[600px]">
           <AnimatePresence custom={direction} mode="popLayout" initial={false}>
             <motion.div
               key={activeIndex}
