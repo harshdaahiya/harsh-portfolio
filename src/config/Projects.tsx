@@ -64,113 +64,39 @@ export const projects: project[] = [
     featured: true,
   },
   {
-    slug: 'retailix-platform',
-    projectName: 'Retailix Platform',
+    slug: 'bloghive',
+    projectName: 'BlogHive',
     label: 'Visit Live Site',
-    liveLink: 'https://retailix.online',
-    githubLink: 'https://github.com/harshdaahiya/cravo',
-    projectImage: '/projects/harshdaahiya_retailix.png',
+    liveLink: 'https://bloghive.believeharsh.in',
+    githubLink: 'https://github.com/harshdaahiya/BlogHive',
+    projectImage: '/projects/harshdaahiya_bloghive.png', // Triggers gradient fallback
     screenshots: [],
     projectDescription:
-      'A luxurious multi-tenant enterprise retailing system featuring comprehensive sales analytics, client order tracing, and seamless cloud deployments.',
-    projectDuration: '6 Months',
+      'A sleek, distraction-free modern blogging application featuring a clean design, interactive personal dashboards, real-time notifications, and seamless article publishing.',
+    projectDuration: '3 Months',
     projectResponsibility: [
-      'Built interactive reporting widgets with premium custom graphs and dynamic charts.',
-      'Engineered multi-tenant database routing schemas ensuring complete data isolation.',
-      'Spearheaded cloud migration strategies resulting in a 40% reduction in infrastructure overhead.',
+      'Designed and engineered a distraction-free writing editor and clean, responsive UI layouts with TailwindCSS and React.',
+      'Built robust backend service endpoints using Node.js and Express to manage blog lifecycle and secure MongoDB data access.',
+      'Implemented key social interactive features such as personalized stats tracking, notifications, bookmarks, and blog likes.',
     ],
     projectSkills: [
       'React',
-      'TypeScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
       'Tailwind CSS',
-      'Redux',
-      'Docker',
-      'AWS',
-      'GraphQL',
+      'Framer Motion',
     ],
     projectContent: {
       overview:
-        'Retailix is a multi-tenant enterprise SaaS platform designed for retail businesses to manage sales, track orders, and analyze business performance through rich interactive dashboards.',
+        'BlogHive is an intuitive content sharing and writing hub featuring a stunning distraction-free editor, search, real-time notifications, and personalized stats dashboards for writers.',
       challenge:
-        "Building a truly isolated multi-tenant architecture where each client's data remains completely separated while sharing the same infrastructure and codebase was the core engineering challenge.",
+        'Delivering a clean, lightweight, and engaging platform that manages rich text operations, smooth user interactions, and rapid search queries without bloating response latency.',
       solution:
-        'Implemented dynamic database routing with tenant-aware connection pooling, built a custom GraphQL API layer for flexible data querying, and created a modular widget system for the analytics dashboard that supports real-time data updates.',
+        'Utilized React 18 and TailwindCSS to construct a responsive, aesthetic frontend coupled with Framer Motion for elegant micro-interactions. Integrated MongoDB for performant data lookup and Node/Express for scalable backend logic.',
       impact:
-        'Successfully onboarded multiple enterprise clients with zero data leakage incidents. The cloud migration reduced infrastructure costs by 40% while improving response times by 3x.',
+        'Created a fast, fully operational blogging platform with secure reader and writer portals, immediate notification alerts, and a streamlined reading and writing pipeline.',
     },
     featured: true,
-  },
-  {
-    slug: 'evolt-charging',
-    projectName: 'Evolt Charging Platform',
-    label: 'Visit Company Profile',
-    liveLink: 'https://www.linkedin.com/company/evoltsoft',
-    projectImage: '', // Triggers gradient fallback
-    screenshots: [],
-    projectDescription:
-      'An electric vehicle charging station management system dashboard showing real-time socket telemetry, power loads, and map pins with station statuses.',
-    projectDuration: '5 Months',
-    projectResponsibility: [
-      'Built real-time telemetry dashboard using WebSockets and high-performance canvas-based widgets.',
-      'Integrated interactive maps displaying live station occupation statuses and power capacity indicators.',
-      'Implemented OCPP and OCPI protocol handling for seamless chargers communication.',
-    ],
-    projectSkills: [
-      'Node.js',
-      'TypeScript',
-      'Express',
-      'Firebase',
-      'WebSockets',
-      'GCP',
-      'OCPP/OCPI',
-    ],
-    projectContent: {
-      overview:
-        'A comprehensive EV charging infrastructure management platform that provides real-time monitoring of charging stations, socket-level telemetry, and power grid analytics through an intuitive dashboard.',
-      challenge:
-        'Handling real-time bidirectional communication with hundreds of charging stations simultaneously, each reporting telemetry data at sub-second intervals, while maintaining a responsive dashboard UI.',
-      solution:
-        'Built a WebSocket-based real-time pipeline with OCPP/OCPI protocol handlers for charger communication. The dashboard uses canvas-based rendering for high-frequency data visualization and interactive maps for geographic station monitoring.',
-      impact:
-        'Enabled live monitoring of charging infrastructure with real-time station status updates, power load balancing, and predictive maintenance alerts across the entire network.',
-    },
-    featured: false,
-  },
-  {
-    slug: 'syncspace-workspace',
-    projectName: 'SyncSpace Collaborative Platform',
-    label: 'Visit Live Site',
-    liveLink: 'https://github.com/believeharsh', // Fallback to github profile since it's a personal project
-    githubLink: 'https://github.com/harshdaahiya/cravo',
-    projectImage: '', // Triggers gradient fallback
-    screenshots: [],
-    projectDescription:
-      'An AI-powered real-time collaborative workspace featuring canvas whiteboards, multi-user document editors, and low-latency audio calling channels.',
-    projectDuration: '4 Months',
-    projectResponsibility: [
-      'Designed a dynamic canvas whiteboard using HTML5 Canvas API with support for shape manipulation and drawings.',
-      'Integrated real-time operational transformation (OT) synchronization utilizing WebSockets.',
-      'Configured WebRTC mesh connections to enable voice calls without centralized media servers.',
-    ],
-    projectSkills: [
-      'TypeScript',
-      'React',
-      'Next.js',
-      'Tailwind CSS',
-      'Node.js',
-      'WebSockets',
-      'WebRTC',
-    ],
-    projectContent: {
-      overview:
-        'SyncSpace is a multi-user collaborative environment uniting layout sketching, writing, and direct calling into a unified interface.',
-      challenge:
-        'Building dynamic canvas rendering that scales to support dozens of concurrent drawing cursors globally without triggering browser layout thrashing.',
-      solution:
-        'Created an optimized canvas rendering cycle using requestAnimationFrame, coupled with delta operational transformations via WebSockets. Mesh WebRTC channels provide low-overhead direct communication.',
-      impact:
-        'Engineered an ultra-low latency collaboration workspace capable of running complex whiteboards with sub-50ms visual sync globally.',
-    },
-    featured: false,
   },
 ];
