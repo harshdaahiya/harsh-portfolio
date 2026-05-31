@@ -57,7 +57,7 @@ export default function ContactForm({ defaultEmail = '' }: ContactFormProps) {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start">
         {/* LEFT COLUMN */}
         <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-24">

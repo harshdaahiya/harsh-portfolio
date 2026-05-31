@@ -1,6 +1,8 @@
 'use server';
 
 import { contactEmailTemplate } from '@/emails/contactEmailTemplate';
+import { checkRateLimit } from '@/lib/rateLimit';
+import { headers } from 'next/headers';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
@@ -29,6 +31,34 @@ export async function sendEmail(input: {
   }
 
   const { email, message } = parsed.data;
+
+  // Rate Limiting Check (Max 3 emails per day per IP / email)
+  const headerList = await headers();
+  const ip =
+    headerList.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown-ip';
+
+  // 1. IP Rate limit check
+  const ipLimitResult = await checkRateLimit(`rate-limit:ip:${ip}`, 3);
+  if (ipLimitResult.limited) {
+    return {
+      success: false,
+      error:
+        'You have reached the limit of 3 emails per day. Please try again tomorrow.',
+    };
+  }
+
+  // 2. Email Rate limit check
+  const emailLimitResult = await checkRateLimit(
+    `rate-limit:email:${email.toLowerCase()}`,
+    3,
+  );
+  if (emailLimitResult.limited) {
+    return {
+      success: false,
+      error:
+        'You have reached the limit of 3 emails per day. Please try again tomorrow.',
+    };
+  }
   const to = process.env.RESEND_TO_EMAIL;
 
   if (!to) {
