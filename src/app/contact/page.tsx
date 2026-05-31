@@ -15,7 +15,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     typeof email === 'string' ? decodeURIComponent(email) : '';
 
   return (
-    <Container className="py-10 sm:py-20">
+    <Container className="py-10 sm:py-20 animate-page-in">
       <ContactForm defaultEmail={defaultEmail} />
     </Container>
   );
