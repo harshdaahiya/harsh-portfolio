@@ -172,7 +172,7 @@ export default function Projects() {
                 <button
                   key={index}
                   onClick={() => handleDotClick(index)}
-                  className={`h-2.5 rounded-full transition-all duration-500 ease-in-out ${
+                  className={`relative h-2.5 rounded-full transition-all duration-500 ease-in-out before:absolute before:inset-[-19px] before:content-[''] ${
                     isActive
                       ? 'w-7 bg-foreground'
                       : 'w-2.5 bg-muted hover:bg-muted'

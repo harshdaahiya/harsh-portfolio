@@ -95,7 +95,7 @@ function ContentSection({
   if (!content) return null;
   return (
     <div className="space-y-2">
-      <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60">
+      <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
         {label}
       </span>
       <p className="text-[15px] leading-[1.75] text-foreground/85">{content}</p>
@@ -154,7 +154,12 @@ export default async function ProjectDetailPage({
                     className="h-9 w-9 hover:bg-muted text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                     asChild
                   >
-                    <Link href={project.liveLink} target="_blank">
+                    <Link
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={project.label}
+                    >
                       <ExternalLink className="size-5" />
                     </Link>
                   </Button>
@@ -173,7 +178,12 @@ export default async function ProjectDetailPage({
                       className="h-9 w-9 hover:bg-muted text-muted-foreground hover:text-foreground cursor-pointer transition-colors"
                       asChild
                     >
-                      <Link href={project.githubLink} target="_blank">
+                      <Link
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Source Code"
+                      >
                         <Github className="size-5" />
                       </Link>
                     </Button>
@@ -235,7 +245,7 @@ export default async function ProjectDetailPage({
           {/* Key Responsibilities */}
           {project.projectResponsibility.length > 0 && (
             <div className="space-y-3">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                 Key Responsibilities
               </span>
               <ul className="space-y-3">
@@ -254,7 +264,7 @@ export default async function ProjectDetailPage({
 
         {/* Tech Stack — full width */}
         <div className="mt-14 space-y-4">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
             Tech Stack
           </span>
           <div className="flex flex-wrap gap-2">
@@ -274,7 +284,7 @@ export default async function ProjectDetailPage({
         {/* Screenshots Gallery */}
         {hasScreenshots && (
           <div className="mt-14 space-y-4">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/60">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground">
               Screenshots
             </span>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

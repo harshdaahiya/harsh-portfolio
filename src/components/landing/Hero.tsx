@@ -25,7 +25,12 @@ export default function Hero() {
             {socialLinks.map((link) => (
               <Tooltip key={link.label} delayDuration={0}>
                 <TooltipTrigger asChild>
-                  <Link target="_blank" href={link.href}>
+                  <Link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={link.href}
+                    aria-label={link.label}
+                  >
                     <ReactIcon
                       name={link.icon as ReactIconName}
                       className="size-5 md:size-6 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"

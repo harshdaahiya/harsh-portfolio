@@ -24,14 +24,13 @@ export default function Navbar() {
           <div className="flex">
             <div className="flex items-center gap-2 sm:gap-3">
               <ThemeToggleButton />
-              <Link href="/resume">
-                <Button
-                  variant="outline"
-                  className="h-8 px-2.5 text-xs sm:h-9 sm:px-4 sm:text-sm cursor-pointer font-semibold tracking-tight duration-200"
-                >
-                  Resume
-                </Button>
-              </Link>
+              <Button
+                asChild
+                variant="outline"
+                className="h-8 px-2.5 text-xs sm:h-9 sm:px-4 sm:text-sm cursor-pointer font-semibold tracking-tight duration-200"
+              >
+                <Link href="/resume">Resume</Link>
+              </Button>
             </div>
           </div>
         </div>

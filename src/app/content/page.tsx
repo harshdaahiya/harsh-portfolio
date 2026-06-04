@@ -40,7 +40,7 @@ export default function ContentPage() {
         {/* Subtle divider */}
         <div className="w-12 h-px bg-border mt-2" />
 
-        <p className="text-xs text-muted-foreground/60 tracking-wide uppercase">
+        <p className="text-xs text-muted-foreground tracking-wide uppercase">
           Stay tuned
         </p>
       </div>

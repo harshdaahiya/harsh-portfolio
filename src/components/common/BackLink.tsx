@@ -25,7 +25,10 @@ export default function BackLink({
         className,
       )}
     >
-      <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
+      <ArrowLeft
+        aria-hidden="true"
+        className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5"
+      />
       {label}
     </Link>
   );

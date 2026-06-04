@@ -69,6 +69,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       href={item.href}
                       key={item.name + index}
+                      aria-label={item.name}
                       className="w-8 h-8 sm:w-10 sm:h-10 rounded-md border border-border flex items-center justify-center text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
                     >
                       <ReactIcon

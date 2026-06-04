@@ -115,7 +115,7 @@ export default function ProjectCard({
           <div>
             <div className="flex items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
-                <span className="text-[10px] font-semibold tracking-[0.12em] text-muted-foreground/60 uppercase">
+                <span className="text-[10px] font-semibold tracking-[0.12em] text-muted-foreground uppercase">
                   {project.projectDuration}
                 </span>
                 <h3 className="mt-0.5 text-[15px] font-bold leading-snug tracking-tight text-foreground md:text-[17px]">
@@ -135,6 +135,7 @@ export default function ProjectCard({
                         'noopener,noreferrer',
                       );
                     }}
+                    aria-label={`Visit live website for ${project.projectName}`}
                     className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 hover:scale-110 hover:shadow-md"
                   >
                     <LucideIcon

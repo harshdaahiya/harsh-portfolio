@@ -24,8 +24,16 @@ export default function ExperienceCard({
     >
       {/* Company Header */}
       <div
-        className="flex justify-between items-center gap-4 cursor-pointer"
+        className="flex justify-between items-center gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg"
         onClick={() => setIsOpen(!isOpen)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setIsOpen(!isOpen);
+          }
+        }}
       >
         <div className="flex gap-4 items-center">
           <div className="mt-1 shrink-0">
@@ -42,14 +50,14 @@ export default function ExperienceCard({
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight">
                 {experience.company}
               </h2>
-              <button
-                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full hover:bg-secondary text-muted-foreground"
-                aria-label="Toggle details"
+              <div
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full p-1 hover:bg-secondary text-muted-foreground"
+                aria-hidden="true"
               >
                 <ChevronDown
                   className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                 />
-              </button>
+              </div>
             </div>
             {experience.location && (
               <p className="text-muted-foreground text-md tracking-normal">
