@@ -2,16 +2,9 @@
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
 
-@font-face {
-  font-family: 'Hanken Grotesk';
-  src: url('/fonts/HankenGrotesk-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
-
 /* THEME DEFINITION (Tailwind v4) */
 @theme inline {
+  --font-sans: var(--font-figtree), sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -155,10 +148,6 @@
 }
 
 @layer utilities {
-  .font-hanken {
-    font-family: 'Hanken Grotesk', sans-serif;
-  }
-
   .animate-page-in {
     animation: fadeInBlur 0.6s ease-out forwards;
   }

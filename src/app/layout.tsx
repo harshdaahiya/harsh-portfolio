@@ -6,8 +6,23 @@ import { ThemeProvider } from '@/components/common/ThemeProviders';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import type { Metadata } from 'next';
 import { ViewTransitions } from 'next-view-transitions';
+import localFont from 'next/font/local';
 
 import './globals.css';
+
+const figtree = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Figtree-VariableFont_wght.ttf',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Figtree-Italic-VariableFont_wght.ttf',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-figtree',
+});
 
 export const metadata: Metadata = {
   title: 'Harsh Dahiya - Software Engineer Portfolio',
@@ -24,7 +39,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`font-hanken-grotesk antialiased`}
+          className={`${figtree.variable} font-sans antialiased`}
           suppressHydrationWarning
         >
           <ThemeProvider

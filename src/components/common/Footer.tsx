@@ -46,7 +46,7 @@ export default function Footer() {
                     <Link
                       href={item.href}
                       key={item.name + index}
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-md w-fit"
+                      className="text-muted-foreground hover:text-foreground transition-colors text-md w-fit"
                     >
                       {item.name}
                     </Link>
