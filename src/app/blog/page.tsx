@@ -31,11 +31,11 @@ export default function BlogPage() {
         {/* Heading */}
         <div className="space-y-2">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Blog — Coming Soon
+            Blog - Coming Soon
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base max-w-md leading-relaxed">
             I&apos;m working on this. Writing about things I learn, build, and
-            find interesting — will be live soon.
+            find interesting - will be live soon.
           </p>
         </div>
 

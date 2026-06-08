@@ -7,9 +7,9 @@ export const metadata: Metadata = getMetadata('/resume');
 
 export default function ResumePage() {
   const urls = {
-    embed: '/resume.pdf',
-    download: '/resume.pdf',
-    view: '/resume.pdf',
+    embed: '/harsh_portfolio_resume.pdf',
+    download: '/harsh_portfolio_resume.pdf',
+    view: '/harsh_portfolio_resume.pdf',
   };
 
   return (

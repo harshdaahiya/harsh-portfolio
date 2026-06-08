@@ -36,7 +36,7 @@ export const projects: project[] = [
     screenshots: [],
     projectDescription:
       'A high-performance modern e-commerce application with inventory management, live sales dashboards, secure checkout, and full order processing pipelines.',
-    projectDuration: '12 Months',
+    projectDuration: '3 Months',
     projectResponsibility: [
       'Developed modular and reusable components in Next.js for client and admin dashboards.',
       'Optimized inventory operations and checkout flows with secure payment gateway integrations.',
@@ -73,7 +73,7 @@ export const projects: project[] = [
     screenshots: [],
     projectDescription:
       'A sleek, distraction-free modern blogging application featuring a clean design, interactive personal dashboards, real-time notifications, and seamless article publishing.',
-    projectDuration: '3 Months',
+    projectDuration: '1 Month',
     projectResponsibility: [
       'Designed and engineered a distraction-free writing editor and clean, responsive UI layouts with TailwindCSS and React.',
       'Built robust backend service endpoints using Node.js and Express to manage blog lifecycle and secure MongoDB data access.',

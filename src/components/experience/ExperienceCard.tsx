@@ -92,47 +92,63 @@ export default function ExperienceCard({
         }`}
       >
         <div className="overflow-hidden">
-          <div className="relative border-l border-muted-foreground/30 ml-[23px] pl-6 mt-4 flex flex-col gap-8 pb-4">
+          <div className="ml-[23px] mt-4 flex flex-col pb-4">
             {experience.roles.map((role: Role, index: number) => (
-              <div key={index} className="relative">
-                {/* Role Header */}
-                <div className="flex justify-between items-start mb-2">
-                  <div className="flex flex-col">
+              <div key={index} className="flex gap-5">
+                {/* Left: dot + connecting line */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="size-2.5 rounded-full bg-muted-foreground/50 shrink-0 mt-[5px]" />
+                  {index < experience.roles.length - 1 && (
+                    <div className="w-px flex-1 bg-muted-foreground/25 mt-2" />
+                  )}
+                </div>
+
+                {/* Right: role content */}
+                <div
+                  className={`flex flex-col ${index < experience.roles.length - 1 ? 'pb-8' : 'pb-2'}`}
+                >
+                  {/* Role Header */}
+                  <div className="flex flex-col mb-2">
                     <h3 className="text-foreground font-semibold text-md tracking-normal">
                       {role.position}
                     </h3>
-                    <h3 className="text-muted-foreground text-md tracking-normal">
-                      {role.startDate} - {role.endDate} . {role.duration}
+                    <h3 className="text-muted-foreground text-sm tracking-normal">
+                      {role.startDate} - {role.endDate}
+                      {role.duration ? ` · ${role.duration}` : ''}
                     </h3>
                   </div>
-                </div>
-                <h3 className="text-foreground font-semibold text-md tracking-normal">
-                  Work I did
-                </h3>
-                {/* Role Description */}
-                <div className="flex flex-col gap-2 mb-4">
-                  {role.descritption.map((desc: string, i: number) => (
-                    <p
-                      key={i}
-                      className="text-muted-foreground text-md tracking-normal"
-                    >
-                      • {desc}
-                    </p>
-                  ))}
-                </div>
-                <h3 className="text-foreground font-semibold text-md tracking-normal">
-                  Technology & Tools
-                </h3>
-                {/* Role Technologies */}
-                {role.technologies && role.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {role.technologies.map((tech, techIndex) => (
-                      <Skill key={techIndex} name={tech.name} href={tech.href}>
-                        {tech.icon}
-                      </Skill>
+                  <h3 className="text-foreground font-semibold text-md tracking-normal">
+                    Work I did
+                  </h3>
+                  {/* Role Description */}
+                  <div className="flex flex-col gap-2 mb-4">
+                    {role.descritption.map((desc: string, i: number) => (
+                      <p
+                        key={i}
+                        className="text-muted-foreground text-md tracking-normal"
+                      >
+                        • {desc}
+                      </p>
                     ))}
                   </div>
-                )}
+                  <h3 className="text-foreground font-semibold text-md tracking-normal">
+                    Technology & Tools
+                  </h3>
+                  {/* Role Technologies */}
+                  {role.technologies && role.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {role.technologies.map((tech, techIndex) => (
+                        <Skill
+                          key={techIndex}
+                          name={tech.name}
+                          href={tech.href}
+                        >
+                          {tech.icon}
+                        </Skill>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>

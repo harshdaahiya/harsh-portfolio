@@ -29,11 +29,11 @@ export default function ContentPage() {
         {/* Heading */}
         <div className="space-y-2">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Content — Coming Soon
+            Content - Coming Soon
           </h1>
           <p className="text-muted-foreground text-sm sm:text-base max-w-md leading-relaxed">
             Videos, shorts, and more are on the way. Building this space to
-            share what I&apos;m learning and creating — it won&apos;t be long.
+            share what I&apos;m learning and creating - it won&apos;t be long.
           </p>
         </div>
 
