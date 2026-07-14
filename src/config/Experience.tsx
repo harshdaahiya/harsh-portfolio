@@ -9,6 +9,7 @@ import Postman from '@/components/svgs/technologies/Postman';
 import ReactIcon from '@/components/svgs/technologies/ReactIcon';
 import TailwindCss from '@/components/svgs/technologies/TailwindCss';
 import TypeScript from '@/components/svgs/technologies/TypeScript';
+import { calculateDuration } from '@/lib/utils';
 import React from 'react';
 
 export interface Technologies {
@@ -42,7 +43,7 @@ export const experiences: Experience[] = [
   {
     company: 'Evoltsoft',
     location: 'Pune, India (Remote)',
-    overallDuration: '5 mos',
+    overallDuration: calculateDuration('Jan 2026', 'Present'),
     timePeriod: 'Jan 26 - Present',
     image: '',
     companyLogo: '/company/evoltsoft.png',
@@ -76,7 +77,7 @@ export const experiences: Experience[] = [
     company: 'iTUX',
     location: 'Aurangabad, India (Remote)',
     timePeriod: 'Jun 25 - Dec 26',
-    overallDuration: '7 mos',
+    overallDuration: calculateDuration('Jun 2025', 'Dec 2025'),
     image: '',
     companyLogo: '/company/iTUX.png',
     companyLinkedinPageUrl: 'https://www.linkedin.com/company/itux',
@@ -86,7 +87,7 @@ export const experiences: Experience[] = [
         position: 'Full-stack Developer (Intern)',
         startDate: 'Oct 2025',
         endDate: 'Dec 2025',
-        duration: '3 mos',
+        duration: calculateDuration('Oct 2025', 'Dec 2025'),
         descritption: [
           'Developed and maintained CRM features using the MERN stack (𝐌𝐨𝐧𝐠𝐨𝐃𝐁, 𝐄𝐱𝐩𝐫𝐞𝐬𝐬, 𝐑𝐞𝐚𝐜𝐭, 𝐍𝐨𝐝𝐞.𝐣𝐬), handling both frontend and backend tasks.',
           'Integrated 𝐑𝐚𝐳𝐨𝐫𝐩𝐚𝐲 payment gateway for secure and smooth transactions within the application.',
@@ -103,7 +104,7 @@ export const experiences: Experience[] = [
         position: 'Frontend Developer (Intern)',
         startDate: 'Jun 2025',
         endDate: 'Sep 2025',
-        duration: '4 mos',
+        duration: calculateDuration('Jun 2025', 'Sep 2025'),
         descritption: [
           'Built responsive and user-friendly UI screens using 𝐑𝐞𝐚𝐜𝐭, 𝐓𝐲𝐩𝐞𝐒𝐜𝐫𝐢𝐩𝐭, 𝐚𝐧𝐝 𝐓𝐚𝐢𝐥𝐰𝐢𝐧𝐝 𝐂𝐒𝐒, following modern design practices.',
           'Developed a complete company landing page from scratch, ensuring clean layout, 𝐫𝐞𝐮𝐬𝐚𝐛𝐢𝐥𝐢𝐭𝐲, and 𝐦𝐨𝐛𝐢𝐥𝐞 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐢𝐯𝐞𝐧𝐞𝐬𝐬.',
